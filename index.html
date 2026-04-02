@@ -940,7 +940,7 @@ function bindCalc(prefix){
 function handleStickyCalc(){scrollTo(currentPage==='a'?'a-calc':'b-calc');}
 function handleStickyApply(){scrollTo(currentPage==='a'?'a-form':'b-form');}
 
-var SHEET_URL = 'https://script.google.com/macros/s/AKfycbypCH6JRPB-43fkFwoRftQXSx-mlA9oPmc_odU0nvyKsML00wHQNAUAUAcHuIfDH52jeA/exec';
+var SHEET_URL = 'https://script.google.com/macros/s/AKfycbyaw6r2buwMC-JFEUNPOH3lyGgpVzh2GXLEhV8FvxAalm_YH4RqWDYn49XkGDOERFgf/exec';
 
 function submitForm(page){
   var p = page === 'a' ? 'a' : 'b';
@@ -965,12 +965,10 @@ function submitForm(page){
   var img = new Image();
   img.src = SHEET_URL + '?' + params;
 
-  window.open('https://calendly.com/coleman-clark/new-meeting','_blank');
-
   form.innerHTML = '<div style="text-align:center;padding:32px 16px">'+
     '<div style="font-size:3rem;margin-bottom:16px">🎉</div>'+
     '<h3 style="font-size:1.5rem;font-weight:700;margin-bottom:12px;color:var(--gold2)">Congratulations on Taking the First Step to Financial Freedom!</h3>'+
-    '<p style="color:var(--text2);font-size:1rem;line-height:1.7;margin-bottom:20px">Your information has been received. Coleman will be in touch within 24 hours.<br>Check your new tab to pick a time that works for you — your call is one click away.</p>'+
+    '<p style="color:var(--text2);font-size:1rem;line-height:1.7;margin-bottom:20px">Your information has been received. Coleman will be in touch within 24 hours.<br>Click below to pick a time that works for you.</p>'+
     '<button class="btn-primary" style="padding:14px 36px;font-size:1rem" onclick="window.open(\'https://calendly.com/coleman-clark/new-meeting\',\'_blank\')">Book My Call Now →</button>'+
     '<p style="color:var(--text3);font-size:.78rem;margin-top:14px">214.802.3388 &nbsp;|&nbsp; coleman.clark@wholesalepayments.com</p>'+
   '</div>';
