@@ -17,14 +17,11 @@
 }
 body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
 a{color:var(--gold);text-decoration:none}
-
 .page-switcher{position:sticky;top:0;z-index:100;background:var(--bg2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;padding:0}
 .tab-btn{flex:1;max-width:280px;padding:14px 24px;background:transparent;border:none;color:var(--text2);font-size:14px;font-weight:500;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;letter-spacing:.3px}
 .tab-btn.active{color:var(--gold);border-bottom-color:var(--gold);background:rgba(201,168,76,.07)}
 .tab-btn:hover:not(.active){color:var(--text);background:rgba(255,255,255,.04)}
-
 .page{display:none}.page.active{display:block}
-
 .hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 24px 60px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(201,168,76,.12),transparent);pointer-events:none}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--gold2);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:28px}
@@ -41,41 +38,32 @@ h1.hero-head{font-size:clamp(2rem,5.5vw,3.8rem);font-weight:700;line-height:1.15
 .hstat{text-align:center}
 .hstat-num{font-size:1.8rem;font-weight:700;color:var(--gold2)}
 .hstat-label{font-size:12px;color:var(--text3);text-transform:uppercase;letter-spacing:.8px;margin-top:2px}
-
 section{padding:72px 24px;max-width:1060px;margin:0 auto}
 .section-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 h2.section-head{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height:1.25;margin-bottom:16px}
 .section-sub{font-size:1.05rem;color:var(--text2);max-width:620px;line-height:1.7;margin-bottom:40px}
 .section-divider{height:1px;background:var(--border);max-width:1060px;margin:0 auto}
-
 .card-grid{display:grid;gap:16px}
 .card-grid.col2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .card-grid.col3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.card-grid.col4{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
 .card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:28px 24px}
 .card-icon{font-size:28px;margin-bottom:14px}
 .card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;color:var(--text)}
 .card p{font-size:.9rem;color:var(--text2);line-height:1.65}
 .card.featured{border-color:var(--gold);background:rgba(201,168,76,.07)}
-
-/* PERKS GRID */
 .perk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
 .perk{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;display:flex;align-items:flex-start;gap:12px}
 .perk-icon{font-size:20px;flex-shrink:0;margin-top:2px}
 .perk-text h4{font-size:.9rem;font-weight:600;margin-bottom:2px}
 .perk-text p{font-size:.82rem;color:var(--text2);line-height:1.5}
 .perk.highlight{border-color:var(--gold);background:rgba(201,168,76,.06)}
-
-/* BUYOUT CALLOUT */
 .buyout-box{background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(74,127,232,.1));border:1px solid var(--gold);border-radius:var(--radius2);padding:32px;text-align:center;max-width:680px;margin:0 auto}
 .buyout-box .big-num{font-size:clamp(2.5rem,6vw,4rem);font-weight:700;color:var(--gold2);line-height:1}
 .buyout-box .big-label{font-size:.9rem;color:var(--text2);margin-top:6px}
 .buyout-box .example{font-size:.85rem;color:var(--text3);margin-top:10px;font-style:italic}
-
 .problem-list{list-style:none;display:flex;flex-direction:column;gap:14px;max-width:640px}
 .problem-list li{display:flex;align-items:flex-start;gap:12px;font-size:1rem;color:var(--text2)}
 .problem-list li::before{content:'✗';color:#e2584a;font-weight:700;font-size:1.1rem;flex-shrink:0;margin-top:1px}
-
 .income-table{width:100%;border-collapse:collapse;font-size:.95rem}
 .income-table th{background:var(--bg4);color:var(--text3);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;font-weight:500}
 .income-table td{padding:14px 16px;border-bottom:1px solid var(--border);color:var(--text)}
@@ -83,22 +71,17 @@ h2.section-head{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height
 .income-table .highlight{color:var(--gold2);font-weight:600}
 .income-table .row-top td{background:rgba(201,168,76,.07)}
 .table-wrap{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);overflow:hidden;overflow-x:auto}
-
-/* MONTHLY BREAKDOWN TABLE */
 .month-table{width:100%;border-collapse:collapse;font-size:.85rem;min-width:620px}
 .month-table th{background:var(--bg4);color:var(--text3);font-size:11px;letter-spacing:.8px;text-transform:uppercase;padding:10px 12px;text-align:center;font-weight:500}
 .month-table td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text);text-align:center}
 .month-table tr:last-child td{border-bottom:none}
 .month-table .total-row td{background:rgba(201,168,76,.1);color:var(--gold2);font-weight:600}
-.month-table .year-total{background:rgba(201,168,76,.2);color:var(--gold2);font-weight:700;font-size:1rem}
-
 .steps{display:flex;flex-wrap:wrap;gap:0;position:relative}
 .step{flex:1;min-width:160px;padding:28px 20px;text-align:center;position:relative}
 .step:not(:last-child)::after{content:'→';position:absolute;right:-8px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:1.2rem}
 .step-num{width:40px;height:40px;border-radius:50%;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);color:var(--gold2);font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
 .step h4{font-size:.9rem;font-weight:600;margin-bottom:6px}
 .step p{font-size:.82rem;color:var(--text3);line-height:1.5}
-
 .testimonial{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:28px;position:relative}
 .testimonial::before{content:'"';position:absolute;top:12px;left:20px;font-size:4rem;color:var(--gold);opacity:.25;font-family:Georgia,serif;line-height:1}
 .testi-text{font-size:1rem;color:var(--text2);line-height:1.7;margin-bottom:16px;padding-top:24px;font-style:italic}
@@ -106,7 +89,6 @@ h2.section-head{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height
 .testi-avatar{width:36px;height:36px;border-radius:50%;background:var(--bg4);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--gold2)}
 .testi-name{font-size:.88rem;font-weight:600}
 .testi-title{font-size:.78rem;color:var(--text3)}
-
 .faq-item{border-bottom:1px solid var(--border)}
 .faq-q{width:100%;background:transparent;border:none;color:var(--text);font-size:1rem;font-weight:500;text-align:left;padding:18px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
 .faq-q::after{content:'+';font-size:1.4rem;color:var(--gold);flex-shrink:0;transition:transform .2s}
@@ -114,7 +96,6 @@ h2.section-head{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height
 .faq-a{overflow:hidden;max-height:0;transition:max-height .3s ease}
 .faq-item.open .faq-a{max-height:300px}
 .faq-a p{padding:0 0 18px;color:var(--text2);font-size:.95rem;line-height:1.7}
-
 .calc-wrap{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:36px 32px;max-width:840px;margin:0 auto}
 .calc-title{font-size:1.3rem;font-weight:700;margin-bottom:8px}
 .calc-sub{font-size:.9rem;color:var(--text2);margin-bottom:28px}
@@ -122,7 +103,6 @@ h2.section-head{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height
 .calc-field label{display:block;font-size:12px;font-weight:600;letter-spacing:.5px;color:var(--text3);text-transform:uppercase;margin-bottom:6px}
 .calc-field input{width:100%;background:var(--bg4);border:1px solid var(--border2);border-radius:var(--radius);color:var(--text);font-size:1rem;padding:10px 14px;outline:none;transition:border-color .2s}
 .calc-field input:focus{border-color:var(--gold)}
-.calc-field input::placeholder{color:var(--text3)}
 .calc-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:28px}
 .result-card{background:var(--bg4);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center}
 .result-card .rc-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
@@ -130,13 +110,6 @@ h2.section-head{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height
 .result-card.big .rc-val{font-size:1.7rem}
 .calc-motivation{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);border-radius:var(--radius);padding:16px 20px;font-size:.95rem;color:var(--gold3);line-height:1.6;margin-bottom:24px;text-align:center}
 .chart-wrap{height:200px;margin-top:8px}
-
-/* BUYOUT CALCULATOR */
-.buyout-calc{background:var(--bg4);border:1px solid var(--border2);border-radius:var(--radius);padding:20px;margin-top:20px}
-.buyout-calc label{font-size:12px;font-weight:600;letter-spacing:.5px;color:var(--text3);text-transform:uppercase;display:block;margin-bottom:6px}
-.buyout-calc input{background:var(--bg3);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-size:1rem;padding:10px 14px;outline:none;width:200px;margin-right:12px}
-.buyout-result{font-size:1.5rem;font-weight:700;color:var(--gold2);margin-top:12px}
-
 .lead-form{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:40px 36px;max-width:640px;margin:0 auto;text-align:center}
 .lead-form h3{font-size:1.6rem;font-weight:700;margin-bottom:8px}
 .lead-form p{color:var(--text2);margin-bottom:28px;font-size:.95rem}
@@ -150,25 +123,20 @@ h2.section-head{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height
 .submit-btn{width:100%;background:var(--gold);color:#0a0a0f;padding:15px;border-radius:var(--radius);font-weight:700;font-size:16px;border:none;cursor:pointer;margin-top:8px;transition:all .2s}
 .submit-btn:hover{background:var(--gold2);transform:translateY(-1px)}
 .form-disclaimer{font-size:.75rem;color:var(--text3);margin-top:12px}
-
 .final-cta{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 24px;text-align:center}
 .final-cta h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:14px}
 .final-cta p{color:var(--text2);font-size:1.05rem;max-width:540px;margin:0 auto 32px}
-
 .sticky-bar{position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-top:1px solid var(--border);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:99;box-shadow:0 -4px 24px rgba(0,0,0,.4)}
 .sticky-bar p{font-size:.85rem;color:var(--text2);line-height:1.3}
 .sticky-bar strong{color:var(--text);display:block;font-size:.9rem}
 .sticky-btns{display:flex;gap:8px;flex-shrink:0}
 .sticky-btns .btn-primary{padding:10px 18px;font-size:13px}
 .sticky-btns .btn-secondary{padding:10px 18px;font-size:13px}
-
 footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;border-top:1px solid var(--border)}
-
 .proof-bar{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;align-items:center;padding:20px 24px;background:var(--bg2);border-bottom:1px solid var(--border)}
 .proof-item{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--text2)}
 .proof-dot{width:8px;height:8px;border-radius:50%;background:var(--success);flex-shrink:0}
 .stars{color:var(--gold);font-size:.9rem;margin-right:2px}
-
 .model-row{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--border)}
 .model-row:last-child{border-bottom:none}
 .model-icon{width:44px;height:44px;border-radius:var(--radius);background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
@@ -177,7 +145,6 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
 .model-amount{margin-left:auto;text-align:right;flex-shrink:0}
 .model-amount .ma-val{font-size:1.1rem;font-weight:700;color:var(--gold2)}
 .model-amount .ma-label{font-size:.75rem;color:var(--text3)}
-
 .who-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .who-card{background:var(--bg3);border-radius:var(--radius2);padding:24px}
 .who-card h4{font-size:.95rem;font-weight:600;margin-bottom:14px}
@@ -187,13 +154,12 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
 .who-list li{font-size:.9rem;color:var(--text2)}
 .who-card.green{border:1px solid rgba(58,184,122,.3)}
 .who-card.red{border:1px solid rgba(226,88,74,.3)}
-
-/* STAT BLOCKS */
 .stat-row{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:40px}
 .stat-block{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:24px 28px;text-align:center;min-width:140px}
 .stat-block .sb-num{font-size:2rem;font-weight:700;color:var(--gold2);line-height:1}
 .stat-block .sb-label{font-size:.78rem;color:var(--text3);text-transform:uppercase;letter-spacing:.7px;margin-top:6px}
-
+.mid-cta{text-align:center;padding:48px 24px;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.mid-cta p{color:var(--text2);font-size:.95rem;margin-bottom:16px}
 @media(max-width:600px){
   .form-row{grid-template-columns:1fr}
   .who-grid{grid-template-columns:1fr}
@@ -226,10 +192,10 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
   <div class="hero">
     <div class="hero-badge">Only for Industry-Experienced Reps</div>
     <h1 class="hero-head">Stop Starting Over <span class="gold">Every Month</span></h1>
-    <p class="hero-sub">You already know how to close. But if your income resets to zero every 30 days, your skill is being wasted. Wholesale Payments pays you upfront on every deal <em>and</em> monthly residuals for life — so your portfolio grows even when you're not selling.</p>
+    <p class="hero-sub">You already know how to close. But if your income resets to zero every 30 days, your skill is being wasted. Wholesale Payments pays you upfront on every deal and monthly residuals for life.</p>
     <div class="cta-row">
-      <button class="btn-primary" onclick="scrollTo('a-form')">Book a Call</button>
-      <button class="btn-secondary" onclick="scrollTo('a-calc')">See the Numbers</button>
+      <button class="btn-primary" onclick="scrollToEl('a-form')">Book a Call</button>
+      <button class="btn-secondary" onclick="scrollToEl('a-form')">See If You're a Fit</button>
     </div>
     <div class="hero-stats">
       <div class="hstat"><div class="hstat-num">$800–$3,000</div><div class="hstat-label">Per Deal</div></div>
@@ -241,30 +207,36 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
 
   <div class="section-divider"></div>
 
-  <!-- WHAT YOU GET -->
   <section>
     <p class="section-label">The Offer</p>
     <h2 class="section-head">What Wholesale Payments Puts on the Table</h2>
     <p class="section-sub">This is not a standard sales gig. Here's what experienced reps receive from day one.</p>
     <div class="perk-grid">
-      <div class="perk highlight"><div class="perk-icon">📅</div><div class="perk-text"><h4>2–3 Pre-Set Appointments Daily</h4><p>Qualified merchant appointments set for you every day — you show up and close.</p></div></div>
-      <div class="perk highlight"><div class="perk-icon">💵</div><div class="perk-text"><h4>$800–$3,000 Per Deal</h4><p>Upfront commission on every account, with volume bonuses on top.</p></div></div>
-      <div class="perk highlight"><div class="perk-icon">🎁</div><div class="perk-text"><h4>$15,000 Fast Start Bonus</h4><p>Hit your ramp targets and earn a significant signing bonus on top of your commissions.</p></div></div>
-      <div class="perk"><div class="perk-icon">⚡</div><div class="perk-text"><h4>Daily Pay</h4><p>Get paid the same day your deals are processed — no waiting on payroll cycles.</p></div></div>
-      <div class="perk"><div class="perk-icon">🖥️</div><div class="perk-text"><h4>FREE POS &amp; Terminal Placement</h4><p>Modern Clover POS systems placed for free — a built-in door opener for every call.</p></div></div>
-      <div class="perk"><div class="perk-icon">📈</div><div class="perk-text"><h4>Lifetime Vested Residuals</h4><p>Every merchant you close pays you monthly residuals for life. Your portfolio is yours.</p></div></div>
-      <div class="perk"><div class="perk-icon">🏦</div><div class="perk-text"><h4>45x Buyout Opportunities</h4><p>Sell your residual portfolio at 45x its monthly value — a life-changing liquidity event.</p></div></div>
-      <div class="perk"><div class="perk-icon">🧑‍💼</div><div class="perk-text"><h4>Dedicated Sales Manager</h4><p>Direct support from a dedicated manager who helps you close and grow your book.</p></div></div>
+      <div class="perk highlight"><div class="perk-icon">📅</div><div class="perk-text"><h4>2–3 Pre-Set Appointments Daily</h4><p>Qualified merchant appointments set for you every day.</p></div></div>
+      <div class="perk highlight"><div class="perk-icon">💵</div><div class="perk-text"><h4>$800–$3,000 Per Deal</h4><p>Upfront commission on every account with volume bonuses.</p></div></div>
+      <div class="perk highlight"><div class="perk-icon">🎁</div><div class="perk-text"><h4>$15,000 Fast Start Bonus</h4><p>Hit your ramp targets and earn a significant signing bonus.</p></div></div>
+      <div class="perk"><div class="perk-icon">⚡</div><div class="perk-text"><h4>Daily Pay</h4><p>Get paid the same day your deals are processed.</p></div></div>
+      <div class="perk"><div class="perk-icon">🖥️</div><div class="perk-text"><h4>FREE POS &amp; Terminal Placement</h4><p>Modern Clover POS systems placed for free.</p></div></div>
+      <div class="perk"><div class="perk-icon">📈</div><div class="perk-text"><h4>Lifetime Vested Residuals</h4><p>Every merchant pays you monthly for life.</p></div></div>
+      <div class="perk"><div class="perk-icon">🏦</div><div class="perk-text"><h4>45x Buyout Opportunities</h4><p>$10K/mo residual portfolio = $450,000 buyout.</p></div></div>
+      <div class="perk"><div class="perk-icon">🧑‍💼</div><div class="perk-text"><h4>Dedicated Sales Manager</h4><p>Direct support from Coleman Clark — 19 years in the industry.</p></div></div>
     </div>
   </section>
 
+  <div class="mid-cta">
+    <p>Experienced closer looking for a smarter model?</p>
+    <div class="cta-row">
+      <button class="btn-primary" onclick="scrollToEl('a-form')">Book a Call</button>
+      <button class="btn-secondary" onclick="scrollToEl('a-form')">See If You're a Fit</button>
+    </div>
+  </div>
+
   <div class="section-divider"></div>
 
-  <!-- BUYOUT -->
   <section>
     <p class="section-label">The 45x Buyout</p>
     <h2 class="section-head">Your Residuals Are Worth <span class="gold">Way More Than You Think</span></h2>
-    <p class="section-sub">Most sales jobs pay you and that's it. At Wholesale Payments, your residual portfolio can be bought out at 45x — turning monthly income into a massive lump sum.</p>
+    <p class="section-sub">Most sales jobs pay you and that's it. At Wholesale Payments your residual portfolio can be bought out at 45x — turning monthly income into a massive lump sum.</p>
     <div class="buyout-box">
       <div style="font-size:1rem;color:var(--text2);margin-bottom:12px">45x Guaranteed Buyout</div>
       <div class="big-num">$450,000</div>
@@ -282,18 +254,8 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
     </div>
   </section>
 
-  <!-- MID CTA A1 -->
-  <div style="text-align:center;padding:48px 24px;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-    <p style="color:var(--text2);font-size:.95rem;margin-bottom:16px">Experienced closer looking for a smarter model?</p>
-    <div class="cta-row">
-      <button class="btn-primary" onclick="scrollTo('a-form')">Book a Call</button>
-      <button class="btn-secondary" onclick="scrollTo('a-form')">See If You're a Fit</button>
-    </div>
-  </div>
-
   <div class="section-divider"></div>
 
-  <!-- PROBLEM -->
   <section>
     <p class="section-label">The Problem</p>
     <h2 class="section-head">The Hidden Cost of Most Sales Jobs</h2>
@@ -310,11 +272,10 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
 
   <div class="section-divider"></div>
 
-  <!-- INCOME MODEL -->
   <section>
     <p class="section-label">Real Numbers</p>
     <h2 class="section-head">What the Income Model Actually Looks Like</h2>
-    <p class="section-sub">10 deals per month. Here's what year one and year two actually produce — commission, bonus, and residuals combined.</p>
+    <p class="section-sub">10 deals per month. Here's what year one actually produces — commission, bonus, and residuals combined.</p>
     <div class="table-wrap" style="margin-bottom:24px">
       <table class="month-table">
         <thead><tr><th>Month</th><th>Commission</th><th>Bonus</th><th>Residual</th><th>Monthly Total</th></tr></thead>
@@ -336,7 +297,6 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
       </table>
     </div>
     <p style="font-size:.78rem;color:var(--text3);margin-bottom:32px">*Month 3 includes $15,000 Fast Start Bonus. Based on 10 deals/month at $25,000 avg card volume, 1% residual, $800 commission/deal, $1,000 bonus/month.</p>
-
     <div class="table-wrap">
       <table class="income-table">
         <thead><tr><th>Profile</th><th>Deals/Mo</th><th>Month 12 Residual</th><th>Month 24 Residual</th><th>Upfront Y1 Est.</th></tr></thead>
@@ -352,7 +312,6 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
 
   <div class="section-divider"></div>
 
-  <!-- CALCULATOR -->
   <section id="a-calc">
     <p class="section-label">Residual Calculator</p>
     <h2 class="section-head">Run Your Own Numbers</h2>
@@ -379,33 +338,30 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
     </div>
   </section>
 
-  <!-- AFTER CALC CTA A -->
-  <div style="text-align:center;padding:48px 24px;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-    <p style="color:var(--text2);font-size:.95rem;margin-bottom:16px">Like what you see? Let's talk about your fit.</p>
+  <div class="mid-cta">
+    <p>Like what you see? Let's talk about your fit.</p>
     <div class="cta-row">
-      <button class="btn-primary" onclick="scrollTo('a-form')">Schedule Your Call</button>
-      <button class="btn-secondary" onclick="scrollTo('a-form')">See If You're a Fit</button>
+      <button class="btn-primary" onclick="scrollToEl('a-form')">Schedule Your Call</button>
+      <button class="btn-secondary" onclick="scrollToEl('a-form')">See If You're a Fit</button>
     </div>
   </div>
 
   <div class="section-divider"></div>
 
-  <!-- HOW IT WORKS -->
   <section>
     <p class="section-label">Process</p>
     <h2 class="section-head">From Onboard to Residual Stack</h2>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><h4>Apply</h4><p>Quick application. We screen for experienced closers only.</p></div>
-      <div class="step"><div class="step-num">2</div><h4>Onboard</h4><p>Training, tools, territory, and your dedicated manager.</p></div>
-      <div class="step"><div class="step-num">3</div><h4>Work Appointments</h4><p>2–3 pre-set qualified appointments hit your calendar daily.</p></div>
-      <div class="step"><div class="step-num">4</div><h4>Close &amp; Stack</h4><p>Every deal pays upfront + adds to your residual portfolio.</p></div>
+      <div class="step"><div class="step-num">1</div><h4>Apply</h4><p>Quick application. Experienced closers only.</p></div>
+      <div class="step"><div class="step-num">2</div><h4>Onboard</h4><p>Training, tools, territory, dedicated manager.</p></div>
+      <div class="step"><div class="step-num">3</div><h4>Work Appointments</h4><p>2–3 pre-set qualified appointments daily.</p></div>
+      <div class="step"><div class="step-num">4</div><h4>Close &amp; Stack</h4><p>Every deal pays upfront + residual portfolio.</p></div>
       <div class="step"><div class="step-num">5</div><h4>Build Wealth</h4><p>Portfolio compounds. Buyout opportunity unlocks.</p></div>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- TESTIMONIALS -->
   <section>
     <p class="section-label">Rep Stories</p>
     <h2 class="section-head">What Other Closers Are Saying</h2>
@@ -427,28 +383,26 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
 
   <div class="section-divider"></div>
 
-  <!-- FAQ -->
   <section>
     <p class="section-label">FAQ</p>
     <h2 class="section-head">Questions Closers Always Ask</h2>
     <div style="max-width:700px">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need merchant services experience specifically?</button><div class="faq-a"><p>No. This program is for experienced closers — insurance, solar, roofing, auto, B2B. If you can close, we train you on the product. The selling skills you already have are exactly what this model needs.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How does the $15,000 Fast Start Bonus work?</button><div class="faq-a"><p>Hit your ramp targets in the early months and the Fast Start Bonus pays on top of your normal commissions. Specifics are covered in your onboarding call with your dedicated Sales Manager.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need merchant services experience specifically?</button><div class="faq-a"><p>No. This program is for experienced closers — insurance, solar, roofing, auto, B2B. If you can close, we train you on the product.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How does the $15,000 Fast Start Bonus work?</button><div class="faq-a"><p>Hit your ramp targets in the early months and the Fast Start Bonus pays on top of your normal commissions. Specifics are covered in your onboarding call.</p></div></div>
       <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are the pre-set appointments actually qualified?</button><div class="faq-a"><p>Yes. The appointments are set by WP's appointment team specifically for merchant services conversations. You show up to close — not to educate from scratch.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How does the 45x buyout work?</button><div class="faq-a"><p>Once your residual portfolio reaches a qualifying level, you have the option to sell it at 45x the monthly value. A $10,000/month residual book = a $450,000 buyout. This is a guaranteed program — not speculation.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is this 1099 or W2?</button><div class="faq-a"><p>1099 independent contractor. You run your own business, own your portfolio, and control your income. That's by design — it's what creates the uncapped upside and buyout eligibility.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How does the 45x buyout work?</button><div class="faq-a"><p>Once your residual portfolio reaches a qualifying level, you have the option to sell it at 45x the monthly value. A $10,000/month residual book = a $450,000 buyout.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is this 1099 or W2?</button><div class="faq-a"><p>1099 independent contractor. You run your own business, own your portfolio, and control your income.</p></div></div>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- MEET YOUR NSM - PAGE A -->
   <section>
     <p class="section-label">Who You're Talking To</p>
     <h2 class="section-head">Meet Your National Sales Manager</h2>
     <div style="display:flex;flex-wrap:wrap;gap:36px;align-items:center;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:36px">
       <div style="display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0">
-        <img id="nsm-photo-a" src="" alt="Coleman Clark" style="width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:top center;border:3px solid var(--gold);background:var(--bg4)"/>
+        <img id="nsm-photo-a" src="coleman.jpg" alt="Coleman Clark" style="width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:top center;border:3px solid var(--gold);background:var(--bg4)"/>
         <button class="nsm-upload-btn" onclick="loadNsmPhoto()" style="background:var(--gold);color:#0a0a0f;border:none;font-size:12px;font-weight:700;padding:7px 16px;border-radius:6px;cursor:pointer">+ Upload Your Photo</button>
       </div>
       <div style="flex:1;min-width:240px">
@@ -459,7 +413,7 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
           <span style="background:rgba(58,184,122,.1);border:1px solid rgba(58,184,122,.3);color:var(--success);font-size:.8rem;font-weight:600;padding:5px 14px;border-radius:50px">Inc. 5000 NSM</span>
           <span style="background:var(--bg4);border:1px solid var(--border2);color:var(--text2);font-size:.8rem;font-weight:600;padding:5px 14px;border-radius:50px">50,000+ Merchants Served</span>
         </div>
-        <p style="color:var(--text2);font-size:.95rem;line-height:1.7;margin-bottom:20px">"I've spent 19 years in this industry — I know what separates reps who build real wealth from those who stay stuck in the reset cycle. If you're a closer looking for a better vehicle, I want to talk to you personally. Book a call and let's see if this is the right fit."</p>
+        <p style="color:var(--text2);font-size:.95rem;line-height:1.7;margin-bottom:20px">"I've spent 19 years in this industry — I know what separates reps who build real wealth from those who stay stuck in the reset cycle. If you're a closer looking for a better vehicle, I want to talk to you personally."</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap">
           <a href="tel:2148023388" style="color:var(--gold2);font-size:.9rem;font-weight:600">📞 214.802.3388</a>
           <a href="mailto:coleman.clark@wholesalepayments.com" style="color:var(--gold2);font-size:.9rem;font-weight:600">✉ coleman.clark@wholesalepayments.com</a>
@@ -481,7 +435,7 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
         <div class="form-field"><label>Last Name</label><input type="text" placeholder="Last"/></div>
       </div>
       <div class="form-row">
-        <div class="form-field"><label>Phone</label><input type="tel" id="phone-a" placeholder="(___) ___-____" oninput="fmtPhone(this)" maxlength="14"/></div>
+        <div class="form-field"><label>Phone</label><input type="tel" placeholder="(___) ___-____" oninput="fmtPhone(this)" maxlength="14"/></div>
         <div class="form-field"><label>Email</label><input type="email" placeholder="you@email.com"/></div>
       </div>
       <div class="form-row">
@@ -494,7 +448,7 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
           <select><option value="">Select...</option><option>1–3 years</option><option>3–5 years</option><option>5–10 years</option><option>10+ years</option></select>
         </div>
       </div>
-      <button class="submit-btn" onclick="submitForm('a')">Book My Call →</button>
+      <button class="submit-btn" onclick="submitInfoOnly('a')">Submit for More Information →</button>
       <p class="form-disclaimer">By submitting, you agree to be contacted by Coleman Clark at Wholesale Payments. No spam. Ever.<br>214.802.3388 &nbsp;|&nbsp; coleman.clark@wholesalepayments.com</p>
     </div>
   </section>
@@ -503,8 +457,8 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
     <h2>Your Skill Deserves a <span class="gold">Better Vehicle</span></h2>
     <p>Stop building someone else's income. Book a 20-minute call and see if this is the right fit.</p>
     <div class="cta-row">
-      <button class="btn-primary" onclick="scrollTo('a-form')">Book a Call Now</button>
-      <button class="btn-secondary" onclick="scrollTo('a-calc')">Run My Numbers</button>
+      <button class="btn-primary" onclick="scrollToEl('a-form')">Book a Call Now</button>
+      <button class="btn-secondary" onclick="scrollToEl('a-calc')">Run My Numbers</button>
     </div>
     <p style="margin-top:24px;color:var(--text3);font-size:.85rem">214.802.3388 &nbsp;|&nbsp; coleman.clark@wholesalepayments.com &nbsp;|&nbsp; wholesalepayments.com/careers</p>
   </div>
@@ -525,10 +479,10 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
   <div class="hero">
     <div class="hero-badge">For Ambitious Self-Starters</div>
     <h1 class="hero-head">You're Not Built for <span class="gold">Average</span></h1>
-    <p class="hero-sub">Most people spend their best years trading time for capped income. The ones who break out find a vehicle that pays them even when they're not working. Wholesale Payments is that vehicle — upfront pay, daily pay, and residuals that stack for life.</p>
+    <p class="hero-sub">Most people spend their best years trading time for capped income. The ones who break out find a vehicle that pays them even when they're not working. Wholesale Payments is that vehicle.</p>
     <div class="cta-row">
-      <button class="btn-primary" onclick="scrollTo('b-form')">Start Here</button>
-      <button class="btn-secondary" onclick="scrollTo('b-calc')">See What You Could Build</button>
+      <button class="btn-primary" onclick="scrollToEl('b-form')">Book a Call</button>
+      <button class="btn-secondary" onclick="scrollToEl('b-form')">See If You're a Fit</button>
     </div>
     <div class="hero-stats">
       <div class="hstat"><div class="hstat-num">Day 1</div><div class="hstat-label">Income Starts</div></div>
@@ -554,51 +508,48 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
     </ul>
   </section>
 
-  <div class="section-divider"></div>
-
-  <section>
-    <p class="section-label">The Opportunity</p>
-    <h2 class="section-head">What Wholesale Payments Actually Offers</h2>
-    <p class="section-sub">Every business that accepts credit cards pays a processing fee. You help them get a better deal — and earn a cut of every transaction they run, every month, for life.</p>
-
-    <div class="stat-row">
-      <div class="stat-block"><div class="sb-num">#3</div><div class="sb-label">Fastest Growing ISO<br>Fortune 5,000</div></div>
-      <div class="stat-block"><div class="sb-num">18</div><div class="sb-label">Years in Business</div></div>
-      <div class="stat-block"><div class="sb-num">$7B+</div><div class="sb-label">Annual Transaction Volume</div></div>
-      <div class="stat-block"><div class="sb-num">400+</div><div class="sb-label">Employees</div></div>
-    </div>
-
-    <div class="perk-grid">
-      <div class="perk highlight"><div class="perk-icon">📅</div><div class="perk-text"><h4>2–3 Pre-Set Appointments Daily</h4><p>You don't cold call all day. Qualified merchant appointments are set for you to walk into and close.</p></div></div>
-      <div class="perk highlight"><div class="perk-icon">💵</div><div class="perk-text"><h4>$800–$3,000 Per Deal</h4><p>Upfront commission paid on every account you bring on, with volume bonuses available.</p></div></div>
-      <div class="perk highlight"><div class="perk-icon">🎁</div><div class="perk-text"><h4>$15,000 Fast Start Bonus</h4><p>Hit your early ramp targets and earn a significant bonus on top of your commissions.</p></div></div>
-      <div class="perk"><div class="perk-icon">⚡</div><div class="perk-text"><h4>Daily Pay</h4><p>No waiting. Get paid the same day your deals are processed.</p></div></div>
-      <div class="perk"><div class="perk-icon">🖥️</div><div class="perk-text"><h4>FREE POS &amp; Terminal</h4><p>Free Clover POS placement — a powerful value-add that opens doors on every call.</p></div></div>
-      <div class="perk"><div class="perk-icon">📈</div><div class="perk-text"><h4>Lifetime Vested Residuals</h4><p>Every account you close pays you monthly — forever. Your portfolio is yours to keep.</p></div></div>
-      <div class="perk"><div class="perk-icon">🏦</div><div class="perk-text"><h4>45x Buyout Available</h4><p>Your residual book can be sold at 45x monthly value. A $10K/mo portfolio = $450,000.</p></div></div>
-      <div class="perk"><div class="perk-icon">🧑‍💼</div><div class="perk-text"><h4>Dedicated Sales Manager</h4><p>A real person in your corner helping you close deals and grow your income.</p></div></div>
-    </div>
-  </section>
-
-  <!-- MID CTA B1 -->
-  <div style="text-align:center;padding:48px 24px;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-    <p style="color:var(--text2);font-size:.95rem;margin-bottom:16px">Think this could be the right move for you?</p>
+  <div class="mid-cta">
+    <p>Think this could be the right move for you?</p>
     <div class="cta-row">
-      <button class="btn-primary" onclick="scrollTo('b-form')">Book a Call</button>
-      <button class="btn-secondary" onclick="scrollTo('b-form')">See If You're a Fit</button>
+      <button class="btn-primary" onclick="scrollToEl('b-form')">Book a Call</button>
+      <button class="btn-secondary" onclick="scrollToEl('b-form')">See If You're a Fit</button>
     </div>
   </div>
 
   <div class="section-divider"></div>
 
   <section>
+    <p class="section-label">The Opportunity</p>
+    <h2 class="section-head">What Wholesale Payments Actually Offers</h2>
+    <p class="section-sub">Every business that accepts credit cards pays a processing fee. You help them get a better deal — and earn a cut of every transaction they run, every month, for life.</p>
+    <div class="stat-row">
+      <div class="stat-block"><div class="sb-num">#3</div><div class="sb-label">Fastest Growing ISO Fortune 5,000</div></div>
+      <div class="stat-block"><div class="sb-num">18</div><div class="sb-label">Years in Business</div></div>
+      <div class="stat-block"><div class="sb-num">$7B+</div><div class="sb-label">Annual Transaction Volume</div></div>
+      <div class="stat-block"><div class="sb-num">400+</div><div class="sb-label">Employees</div></div>
+    </div>
+    <div class="perk-grid">
+      <div class="perk highlight"><div class="perk-icon">📅</div><div class="perk-text"><h4>2–3 Pre-Set Appointments Daily</h4><p>Qualified merchant appointments set for you every day.</p></div></div>
+      <div class="perk highlight"><div class="perk-icon">💵</div><div class="perk-text"><h4>$800–$3,000 Per Deal</h4><p>Upfront commission paid on every account you bring on.</p></div></div>
+      <div class="perk highlight"><div class="perk-icon">🎁</div><div class="perk-text"><h4>$15,000 Fast Start Bonus</h4><p>Hit your early ramp targets and earn a significant bonus.</p></div></div>
+      <div class="perk"><div class="perk-icon">⚡</div><div class="perk-text"><h4>Daily Pay</h4><p>Get paid the same day your deals are processed.</p></div></div>
+      <div class="perk"><div class="perk-icon">🖥️</div><div class="perk-text"><h4>FREE POS &amp; Terminal</h4><p>Free Clover POS placement on every account.</p></div></div>
+      <div class="perk"><div class="perk-icon">📈</div><div class="perk-text"><h4>Lifetime Vested Residuals</h4><p>Every account pays you monthly — forever.</p></div></div>
+      <div class="perk"><div class="perk-icon">🏦</div><div class="perk-text"><h4>45x Buyout Available</h4><p>$10K/mo portfolio = $450,000 buyout.</p></div></div>
+      <div class="perk"><div class="perk-icon">🧑‍💼</div><div class="perk-text"><h4>Dedicated Sales Manager</h4><p>Coleman Clark — 19 years in merchant services.</p></div></div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section>
     <p class="section-label">The Math</p>
     <h2 class="section-head">How You Build Income <span class="gold">Over Time</span></h2>
-    <p class="section-sub">This is a stacking game. Every account you add builds on top of the last. Here's how it plays out at a consistent pace.</p>
+    <p class="section-sub">This is a stacking game. Every account you add builds on top of the last.</p>
     <div class="card-grid col3">
-      <div class="card"><div class="card-icon">📅</div><h3>Month 1–3: Foundation</h3><p>You're onboarding, working pre-set appointments, and earning upfront commissions. Daily pay starts immediately. Fast Start Bonus targets are in reach.</p></div>
+      <div class="card"><div class="card-icon">📅</div><h3>Month 1–3: Foundation</h3><p>Onboarding, working pre-set appointments, earning upfront commissions. Daily pay starts immediately. Fast Start Bonus targets in reach.</p></div>
       <div class="card"><div class="card-icon">📊</div><h3>Month 6–12: Momentum</h3><p>Residuals start stacking. 60–100 accounts means $1,500–$2,500/month in passive income growing alongside your upfronts.</p></div>
-      <div class="card featured"><div class="card-icon">🏆</div><h3>Year 2–3: Leverage</h3><p>At 150–250+ accounts your residual income alone can match a full-time salary. And your portfolio buyout value is building every month.</p></div>
+      <div class="card featured"><div class="card-icon">🏆</div><h3>Year 2–3: Leverage</h3><p>At 150–250+ accounts your residual income alone can match a full-time salary — and your buyout value keeps growing.</p></div>
     </div>
   </section>
 
@@ -630,12 +581,11 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
     </div>
   </section>
 
-  <!-- AFTER CALC CTA B -->
-  <div style="text-align:center;padding:48px 24px;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-    <p style="color:var(--text2);font-size:.95rem;margin-bottom:16px">Ready to make these numbers real?</p>
+  <div class="mid-cta">
+    <p>Ready to make these numbers real?</p>
     <div class="cta-row">
-      <button class="btn-primary" onclick="scrollTo('b-form')">Schedule Your Call</button>
-      <button class="btn-secondary" onclick="scrollTo('b-form')">See If You're a Fit</button>
+      <button class="btn-primary" onclick="scrollToEl('b-form')">Schedule Your Call</button>
+      <button class="btn-secondary" onclick="scrollToEl('b-form')">See If You're a Fit</button>
     </div>
   </div>
 
@@ -645,10 +595,10 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
     <p class="section-label">The Life</p>
     <h2 class="section-head">What Freedom Actually Looks Like</h2>
     <div class="card-grid col2">
-      <div class="card"><div class="card-icon">🕐</div><h3>You Control Your Schedule</h3><p>No punch clock. Work your market on your terms. The residuals keep hitting your account whether you're at a merchant or at your kid's game.</p></div>
-      <div class="card"><div class="card-icon">📍</div><h3>Work Your Own Community</h3><p>Your territory is local. Build relationships with businesses you can walk into — restaurants, salons, retailers, service companies.</p></div>
-      <div class="card"><div class="card-icon">📈</div><h3>Income That Grows Without Permission</h3><p>No manager decides your raise. Every new account you close increases your monthly income permanently. No ceiling. No approval required.</p></div>
-      <div class="card featured"><div class="card-icon">🏗️</div><h3>You're Building a Real Asset</h3><p>Your residual portfolio compounds and has a 45x buyout value. You own it. It's yours. Not your employer's — yours.</p></div>
+      <div class="card"><div class="card-icon">🕐</div><h3>You Control Your Schedule</h3><p>No punch clock. Work your market on your terms. The residuals keep hitting your account either way.</p></div>
+      <div class="card"><div class="card-icon">📍</div><h3>Work Your Own Community</h3><p>Your territory is local. Build relationships with businesses you can walk into — restaurants, salons, retailers.</p></div>
+      <div class="card"><div class="card-icon">📈</div><h3>Income That Grows Without Permission</h3><p>No manager decides your raise. Every new account permanently increases your monthly income.</p></div>
+      <div class="card featured"><div class="card-icon">🏗️</div><h3>You're Building a Real Asset</h3><p>Your residual portfolio compounds and has a 45x buyout value. You own it — not your employer.</p></div>
     </div>
   </section>
 
@@ -689,9 +639,9 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
     <p class="section-label">Process</p>
     <h2 class="section-head">How You Get Started</h2>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><h4>Apply</h4><p>Quick form. We look for drive — not a perfect resume.</p></div>
+      <div class="step"><div class="step-num">1</div><h4>Apply</h4><p>Quick form. Drive over resume.</p></div>
       <div class="step"><div class="step-num">2</div><h4>Qualify</h4><p>Short call to confirm mutual fit.</p></div>
-      <div class="step"><div class="step-num">3</div><h4>Onboard</h4><p>Full training, tools, territory, daily appointments.</p></div>
+      <div class="step"><div class="step-num">3</div><h4>Onboard</h4><p>Training, tools, territory, daily appointments.</p></div>
       <div class="step"><div class="step-num">4</div><h4>Close Deals</h4><p>Work your appointments. Get paid daily.</p></div>
       <div class="step"><div class="step-num">5</div><h4>Build Your Income</h4><p>Residuals stack every month. Portfolio grows.</p></div>
     </div>
@@ -724,23 +674,22 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
     <p class="section-label">FAQ</p>
     <h2 class="section-head">Common Questions</h2>
     <div style="max-width:700px">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need sales experience to start?</button><div class="faq-a"><p>Not required. Some of our most successful reps had no formal sales background. You need drive, consistency, and a willingness to learn. We provide the training, scripts, and pre-set appointments to get you going.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What does "daily pay" mean?</button><div class="faq-a"><p>When your deals are processed and approved, you're paid the same day. No waiting on bi-weekly payroll cycles. Your commissions hit as deals close.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is this full time or part time?</button><div class="faq-a"><p>Many reps start part-time while keeping their current job. As residuals grow most transition to full-time. You control the pace — but results scale with your effort.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the 45x buyout?</button><div class="faq-a"><p>Once your residual portfolio reaches a qualifying level you can sell it at 45x its monthly value. A $10,000/month residual book equals a $450,000 buyout. This is guaranteed — it's a core part of the Wholesale Payments partner program.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What support do I get starting out?</button><div class="faq-a"><p>Full onboarding, 2–3 pre-set qualified appointments daily, a dedicated Sales Manager, proven scripts, FREE POS placement, and ongoing coaching. You're supported from day one.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need sales experience to start?</button><div class="faq-a"><p>Not required. You need drive, consistency, and willingness to learn. We provide training, scripts, and pre-set appointments.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What does "daily pay" mean?</button><div class="faq-a"><p>When your deals are processed and approved, you're paid the same day. No waiting on bi-weekly payroll cycles.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is this full time or part time?</button><div class="faq-a"><p>Many reps start part-time while keeping their current job. As residuals grow most transition to full-time.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the 45x buyout?</button><div class="faq-a"><p>Once your residual portfolio reaches a qualifying level you can sell it at 45x its monthly value. A $10,000/month residual book equals a $450,000 buyout.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What support do I get starting out?</button><div class="faq-a"><p>Full onboarding, 2–3 pre-set qualified appointments daily, a dedicated Sales Manager, proven scripts, FREE POS placement, and ongoing coaching.</p></div></div>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- MEET YOUR NSM - PAGE B -->
   <section>
     <p class="section-label">Who You're Working With</p>
     <h2 class="section-head">The Person in Your Corner</h2>
     <div style="display:flex;flex-wrap:wrap;gap:36px;align-items:center;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:36px">
       <div style="display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0">
-        <img id="nsm-photo-b" src="" alt="Coleman Clark" style="width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:top center;border:3px solid var(--gold);background:var(--bg4)"/>
+        <img id="nsm-photo-b" src="coleman.jpg" alt="Coleman Clark" style="width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:top center;border:3px solid var(--gold);background:var(--bg4)"/>
         <button class="nsm-upload-btn" onclick="loadNsmPhoto()" style="background:var(--gold);color:#0a0a0f;border:none;font-size:12px;font-weight:700;padding:7px 16px;border-radius:6px;cursor:pointer">+ Upload Your Photo</button>
       </div>
       <div style="flex:1;min-width:240px">
@@ -751,7 +700,7 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
           <span style="background:rgba(58,184,122,.1);border:1px solid rgba(58,184,122,.3);color:var(--success);font-size:.8rem;font-weight:600;padding:5px 14px;border-radius:50px">Inc. 5000 NSM</span>
           <span style="background:var(--bg4);border:1px solid var(--border2);color:var(--text2);font-size:.8rem;font-weight:600;padding:5px 14px;border-radius:50px">50,000+ Merchants Served</span>
         </div>
-        <p style="color:var(--text2);font-size:.95rem;line-height:1.7;margin-bottom:20px">"I built my career from the ground up in this industry and I've seen what's possible when someone with the right mindset finds the right opportunity. You won't be alone in this — you'll have a dedicated manager, pre-set appointments, and someone who's been in your shoes. Let's talk."</p>
+        <p style="color:var(--text2);font-size:.95rem;line-height:1.7;margin-bottom:20px">"I built my career from the ground up in this industry and I've seen what's possible when someone with the right mindset finds the right opportunity. You won't be alone — you'll have a dedicated manager, pre-set appointments, and someone who's been in your shoes."</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap">
           <a href="tel:2148023388" style="color:var(--gold2);font-size:.9rem;font-weight:600">📞 214.802.3388</a>
           <a href="mailto:coleman.clark@wholesalepayments.com" style="color:var(--gold2);font-size:.9rem;font-weight:600">✉ coleman.clark@wholesalepayments.com</a>
@@ -773,7 +722,7 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
         <div class="form-field"><label>Last Name</label><input type="text" placeholder="Last"/></div>
       </div>
       <div class="form-row">
-        <div class="form-field"><label>Phone</label><input type="tel" id="phone-b" placeholder="(___) ___-____" oninput="fmtPhone(this)" maxlength="14"/></div>
+        <div class="form-field"><label>Phone</label><input type="tel" placeholder="(___) ___-____" oninput="fmtPhone(this)" maxlength="14"/></div>
         <div class="form-field"><label>Email</label><input type="email" placeholder="you@email.com"/></div>
       </div>
       <div class="form-row">
@@ -786,7 +735,7 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
           <select><option value="">Select...</option><option>I want to control my income</option><option>I want to work for myself</option><option>I want to build passive income</option><option>I need to replace my current income</option><option>I want long-term financial freedom</option></select>
         </div>
       </div>
-      <button class="submit-btn" onclick="submitForm('b')">I Want to Learn More →</button>
+      <button class="submit-btn" onclick="submitInfoOnly('b')">Submit for More Information →</button>
       <p class="form-disclaimer">By submitting, you agree to be contacted by Coleman Clark at Wholesale Payments. No spam. Ever.<br>214.802.3388 &nbsp;|&nbsp; coleman.clark@wholesalepayments.com</p>
     </div>
   </section>
@@ -795,8 +744,8 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
     <h2>The Only Question Is: <span class="gold">Are You Ready?</span></h2>
     <p>Stop waiting for the right time. The right time is before you've wasted another year in the wrong model.</p>
     <div class="cta-row">
-      <button class="btn-primary" onclick="scrollTo('b-form')">Start Here — Apply Now</button>
-      <button class="btn-secondary" onclick="scrollTo('b-calc')">Build My Income Plan</button>
+      <button class="btn-primary" onclick="scrollToEl('b-form')">Start Here — Apply Now</button>
+      <button class="btn-secondary" onclick="scrollToEl('b-calc')">Build My Income Plan</button>
     </div>
     <p style="margin-top:24px;color:var(--text3);font-size:.85rem">214.802.3388 &nbsp;|&nbsp; coleman.clark@wholesalepayments.com &nbsp;|&nbsp; wholesalepayments.com/careers</p>
   </div>
@@ -815,10 +764,10 @@ footer{padding:32px 24px;text-align:center;color:var(--text3);font-size:.8rem;bo
 <footer>
   <p>© 2025 Wholesale Payments — An Inc. 5000 Payment Technology Company</p>
   <p style="margin-top:6px">214.802.3388 &nbsp;|&nbsp; coleman.clark@wholesalepayments.com &nbsp;|&nbsp; wholesalepayments.com/careers</p>
-  <p style="margin-top:6px">[ LOGO PLACEHOLDER ]</p>
 </footer>
 
 <script>
+var SHEET_URL='https://script.google.com/macros/s/AKfycbyaw6r2buwMC-JFEUNPOH3lyGgpVzh2GXLEhV8FvxAalm_YH4RqWDYn49XkGDOERFgf/exec';
 var currentPage='a';
 var chartA=null,chartB=null;
 
@@ -839,20 +788,105 @@ function updateStickyBar(){
   else h.textContent='Ready to Build Real Income?';
 }
 
-function scrollTo(id){
+function scrollToEl(id){
   var el=document.getElementById(id);
   if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
-function toggleFaq(btn){
-  btn.parentElement.classList.toggle('open');
-}
+function toggleFaq(btn){btn.parentElement.classList.toggle('open');}
 
 function fmt(n){return '$'+Math.round(n).toLocaleString();}
 
 function updateBuyout(){
   var v=parseFloat(document.getElementById('buyout-input').value)||0;
   document.getElementById('buyout-result').textContent=fmt(v*45);
+}
+
+function fmtPhone(el){
+  var digits=el.value.replace(/\D/g,'').substring(0,10);
+  var out='';
+  if(digits.length>0) out='('+digits.substring(0,3);
+  if(digits.length>=4) out+=') '+digits.substring(3,6);
+  if(digits.length>=7) out+='-'+digits.substring(6,10);
+  el.value=out;
+}
+
+function loadNsmPhoto(){
+  var input=document.createElement('input');
+  input.type='file';
+  input.accept='image/*';
+  input.style.display='none';
+  input.onchange=function(){
+    var file=input.files[0];
+    if(!file) return;
+    var reader=new FileReader();
+    reader.onload=function(e){
+      var src=e.target.result;
+      ['nsm-photo-a','nsm-photo-b'].forEach(function(id){
+        var img=document.getElementById(id);
+        if(img){img.src=src;img.style.background='none';}
+      });
+      document.querySelectorAll('.nsm-upload-btn').forEach(function(b){b.style.display='none';});
+    };
+    reader.readAsDataURL(file);
+  };
+  document.body.appendChild(input);
+  input.click();
+}
+
+function submitInfoOnly(page){
+  var p=page==='a'?'a':'b';
+  var form=document.getElementById('form-'+p);
+  var inputs=form.querySelectorAll('input');
+  var selects=form.querySelectorAll('select');
+  var fields={
+    page:      page==='a'?'Page A - Experienced Closer':'Page B - Entrepreneur Builder',
+    firstName: inputs[0]?inputs[0].value:'',
+    lastName:  inputs[1]?inputs[1].value:'',
+    phone:     inputs[2]?inputs[2].value:'',
+    email:     inputs[3]?inputs[3].value:'',
+    industry:  selects[0]?selects[0].value:'',
+    experience:selects[1]?selects[1].value:''
+  };
+  var params=Object.keys(fields).map(function(k){
+    return encodeURIComponent(k)+'='+encodeURIComponent(fields[k]);
+  }).join('&');
+  var img=new Image();
+  img.src=SHEET_URL+'?'+params;
+  form.innerHTML='<div style="text-align:center;padding:32px 16px">'+
+    '<div style="font-size:3rem;margin-bottom:16px">🎉</div>'+
+    '<h3 style="font-size:1.5rem;font-weight:700;margin-bottom:12px;color:var(--gold2)">Congratulations on Taking the First Step to Financial Freedom!</h3>'+
+    '<p style="color:var(--text2);font-size:1rem;line-height:1.7;margin-bottom:20px">Your information has been received and sent to the WP Recruiting team. Coleman will be in touch with you personally within 24 hours.</p>'+
+    '<p style="color:var(--text3);font-size:.78rem;margin-top:14px">214.802.3388 &nbsp;|&nbsp; coleman.clark@wholesalepayments.com</p>'+
+  '</div>';
+}
+
+function submitForm(page){
+  var p=page==='a'?'a':'b';
+  var form=document.getElementById('form-'+p);
+  var inputs=form.querySelectorAll('input');
+  var selects=form.querySelectorAll('select');
+  var fields={
+    page:      page==='a'?'Page A - Experienced Closer':'Page B - Entrepreneur Builder',
+    firstName: inputs[0]?inputs[0].value:'',
+    lastName:  inputs[1]?inputs[1].value:'',
+    phone:     inputs[2]?inputs[2].value:'',
+    email:     inputs[3]?inputs[3].value:'',
+    industry:  selects[0]?selects[0].value:'',
+    experience:selects[1]?selects[1].value:''
+  };
+  var params=Object.keys(fields).map(function(k){
+    return encodeURIComponent(k)+'='+encodeURIComponent(fields[k]);
+  }).join('&');
+  var img=new Image();
+  img.src=SHEET_URL+'?'+params;
+  form.innerHTML='<div style="text-align:center;padding:32px 16px">'+
+    '<div style="font-size:3rem;margin-bottom:16px">🎉</div>'+
+    '<h3 style="font-size:1.5rem;font-weight:700;margin-bottom:12px;color:var(--gold2)">Congratulations on Taking the First Step to Financial Freedom!</h3>'+
+    '<p style="color:var(--text2);font-size:1rem;line-height:1.7;margin-bottom:20px">Your information has been received. Coleman will be in touch within 24 hours.<br>Click below to pick a time that works for you.</p>'+
+    '<button class="btn-primary" style="padding:14px 36px;font-size:1rem" onclick="window.open(\'https://calendly.com/coleman-clark/new-meeting\',\'_blank\')">Book My Call Now →</button>'+
+    '<p style="color:var(--text3);font-size:.78rem;margin-top:14px">214.802.3388 &nbsp;|&nbsp; coleman.clark@wholesalepayments.com</p>'+
+  '</div>';
 }
 
 function calcResidual(deals,vol,pct,upfront,months){
@@ -870,14 +904,7 @@ function calcResidual(deals,vol,pct,upfront,months){
   var finalMonthlyResidual=totalAccounts*residualPerAccount;
   var totalUpfront=deals*months*upfront;
   var combined=cumResidual+totalUpfront;
-  return{
-    totalAccounts:totalAccounts,
-    totalResidual:Math.round(cumResidual),
-    totalUpfront:Math.round(totalUpfront),
-    combined:Math.round(combined),
-    monthlyResidualEnd:Math.round(finalMonthlyResidual),
-    monthlyData:monthlyData
-  };
+  return{totalAccounts:totalAccounts,totalResidual:Math.round(cumResidual),totalUpfront:Math.round(totalUpfront),combined:Math.round(combined),monthlyResidualEnd:Math.round(finalMonthlyResidual),monthlyData:monthlyData};
 }
 
 function updateCalc(prefix){
@@ -894,8 +921,7 @@ function updateCalc(prefix){
   document.getElementById(prefix+'-r4').textContent=fmt(r.totalUpfront);
   document.getElementById(prefix+'-r5').textContent=fmt(r.combined);
   var buyout=r.monthlyResidualEnd*45;
-  document.getElementById(prefix+'-motivation').textContent=
-    'At this pace, you could build '+fmt(r.monthlyResidualEnd)+'/month in residual income in '+months+' months — with '+fmt(r.combined)+' in total projected earnings and a potential portfolio buyout value of '+fmt(buyout)+'.';
+  document.getElementById(prefix+'-motivation').textContent='At this pace, you could build '+fmt(r.monthlyResidualEnd)+'/month in residual income in '+months+' months — with '+fmt(r.combined)+' in total projected earnings and a potential portfolio buyout value of '+fmt(buyout)+'.';
   drawChart(prefix,r.monthlyData);
 }
 
@@ -909,24 +935,7 @@ function drawChart(prefix,monthlyData){
 }
 
 function buildChartConfig(labels,residuals,cumulatives){
-  return{
-    type:'bar',
-    data:{
-      labels:labels,
-      datasets:[
-        {label:'Monthly Residual',data:residuals,backgroundColor:'rgba(201,168,76,0.7)',borderRadius:4,order:2},
-        {label:'Cumulative Residual',data:cumulatives,type:'line',borderColor:'#e8c96a',backgroundColor:'transparent',borderWidth:2,pointRadius:0,tension:.4,order:1}
-      ]
-    },
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{labels:{color:'#b0adb8',font:{size:11}}},tooltip:{callbacks:{label:function(c){return c.dataset.label+': $'+Math.round(c.raw).toLocaleString();}}}},
-      scales:{
-        x:{ticks:{color:'#7a788a',font:{size:10}},grid:{color:'rgba(255,255,255,0.04)'}},
-        y:{ticks:{color:'#7a788a',font:{size:10},callback:function(v){return '$'+Math.round(v/1000)+'k';}},grid:{color:'rgba(255,255,255,0.04)'}}
-      }
-    }
-  };
+  return{type:'bar',data:{labels:labels,datasets:[{label:'Monthly Residual',data:residuals,backgroundColor:'rgba(201,168,76,0.7)',borderRadius:4,order:2},{label:'Cumulative Residual',data:cumulatives,type:'line',borderColor:'#e8c96a',backgroundColor:'transparent',borderWidth:2,pointRadius:0,tension:.4,order:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#b0adb8',font:{size:11}}},tooltip:{callbacks:{label:function(c){return c.dataset.label+': $'+Math.round(c.raw).toLocaleString();}}}},scales:{x:{ticks:{color:'#7a788a',font:{size:10}},grid:{color:'rgba(255,255,255,0.04)'}},y:{ticks:{color:'#7a788a',font:{size:10},callback:function(v){return '$'+Math.round(v/1000)+'k';}},grid:{color:'rgba(255,255,255,0.04)'}}}}};
 }
 
 function bindCalc(prefix){
@@ -937,75 +946,8 @@ function bindCalc(prefix){
   updateCalc(prefix);
 }
 
-function handleStickyCalc(){scrollTo(currentPage==='a'?'a-calc':'b-calc');}
-function handleStickyApply(){scrollTo(currentPage==='a'?'a-form':'b-form');}
-
-var SHEET_URL = 'https://script.google.com/macros/s/AKfycbyaw6r2buwMC-JFEUNPOH3lyGgpVzh2GXLEhV8FvxAalm_YH4RqWDYn49XkGDOERFgf/exec';
-
-function submitForm(page){
-  var p = page === 'a' ? 'a' : 'b';
-  var form = document.getElementById('form-'+p);
-  var inputs = form.querySelectorAll('input');
-  var selects = form.querySelectorAll('select');
-
-  var fields = {
-    page:       page === 'a' ? 'Page A - Experienced Closer' : 'Page B - Entrepreneur Builder',
-    firstName:  inputs[0] ? inputs[0].value : '',
-    lastName:   inputs[1] ? inputs[1].value : '',
-    phone:      inputs[2] ? inputs[2].value : '',
-    email:      inputs[3] ? inputs[3].value : '',
-    industry:   selects[0] ? selects[0].value : '',
-    experience: selects[1] ? selects[1].value : ''
-  };
-
-  var params = Object.keys(fields).map(function(k){
-    return encodeURIComponent(k)+'='+encodeURIComponent(fields[k]);
-  }).join('&');
-
-  var img = new Image();
-  img.src = SHEET_URL + '?' + params;
-
-  form.innerHTML = '<div style="text-align:center;padding:32px 16px">'+
-    '<div style="font-size:3rem;margin-bottom:16px">🎉</div>'+
-    '<h3 style="font-size:1.5rem;font-weight:700;margin-bottom:12px;color:var(--gold2)">Congratulations on Taking the First Step to Financial Freedom!</h3>'+
-    '<p style="color:var(--text2);font-size:1rem;line-height:1.7;margin-bottom:20px">Your information has been received. Coleman will be in touch within 24 hours.<br>Click below to pick a time that works for you.</p>'+
-    '<button class="btn-primary" style="padding:14px 36px;font-size:1rem" onclick="window.open(\'https://calendly.com/coleman-clark/new-meeting\',\'_blank\')">Book My Call Now →</button>'+
-    '<p style="color:var(--text3);font-size:.78rem;margin-top:14px">214.802.3388 &nbsp;|&nbsp; coleman.clark@wholesalepayments.com</p>'+
-  '</div>';
-}
-
-function fmtPhone(el){
-  var digits = el.value.replace(/\D/g,'').substring(0,10);
-  var out = '';
-  if(digits.length > 0) out = '(' + digits.substring(0,3);
-  if(digits.length >= 4) out += ') ' + digits.substring(3,6);
-  if(digits.length >= 7) out += '-' + digits.substring(6,10);
-  el.value = out;
-}
-
-function loadNsmPhoto(){
-  var input = document.createElement('input');
-  input.type = 'file';
-  input.accept = 'image/*';
-  input.style.display = 'none';
-  input.onchange = function(){
-    var file = input.files[0];
-    if(!file) return;
-    var reader = new FileReader();
-    reader.onload = function(e){
-      var src = e.target.result;
-      ['nsm-photo-a','nsm-photo-b'].forEach(function(id){
-        var img = document.getElementById(id);
-        img.src = src;
-        img.style.background = 'none';
-      });
-      document.querySelectorAll('.nsm-upload-btn').forEach(function(b){ b.style.display='none'; });
-    };
-    reader.readAsDataURL(file);
-  };
-  document.body.appendChild(input);
-  input.click();
-}
+function handleStickyCalc(){scrollToEl(currentPage==='a'?'a-calc':'b-calc');}
+function handleStickyApply(){scrollToEl(currentPage==='a'?'a-form':'b-form');}
 
 window.addEventListener('load',function(){
   bindCalc('ca');
