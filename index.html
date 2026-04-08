@@ -3,847 +3,845 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Team Steel | Build a Six Figure Income</title>
+<title>Team Steel | Build a Six Figure Income in Merchant Services</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0a0f1a;--bg2:#0f1825;--bg3:#152030;--bg4:#1a2a3a;
-  --blue:#2D6BE4;--green:#4AC78A;--green2:#2fa86e;
-  --text:#f0eee8;--text2:#b0adb8;--text3:#6a6880;
-  --border:#1e3048;--border2:#2a4060;
-  --radius:10px;--radius2:16px;
+  --bg:#0a0f1a;
+  --bg2:#0f1825;
+  --bg3:#152030;
+  --bg4:#1a2a3a;
+  --blue:#2D6BE4;
+  --green:#4AC78A;
+  --text:#f0eee8;
+  --text2:#b0adb8;
+  --text3:#6a6880;
+  --border:#1e3048;
+  --border2:#2a4060;
+  --r:10px;
+  --r2:16px;
 }
 body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.65;overflow-x:hidden}
 a{color:var(--green);text-decoration:none}
+img{display:block}
 
-/* NAV */
-.nav{position:sticky;top:0;z-index:100;background:var(--bg2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
-.nav-brand{font-size:16px;font-weight:700;color:var(--text)}
-.nav-brand span{color:var(--green)}
-.nav-tabs{display:flex;gap:0}
-.tab-btn{padding:8px 18px;background:transparent;border:none;color:var(--text3);font-size:13px;font-weight:500;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
-.tab-btn.active{color:var(--green);border-bottom-color:var(--green)}
-.tab-btn:hover:not(.active){color:var(--text)}
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:100;background:var(--bg2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:12px}
+.brand{font-size:16px;font-weight:700;color:var(--text);white-space:nowrap}
+.brand span{color:var(--green)}
+.tabs{display:flex}
+.tab{padding:8px 20px;background:transparent;border:none;border-bottom:2px solid transparent;color:var(--text3);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;white-space:nowrap}
+.tab.on{color:var(--green);border-bottom-color:var(--green)}
+.tab:hover:not(.on){color:var(--text)}
+.mob-tabs{display:none;background:var(--bg2);border-bottom:1px solid var(--border);overflow-x:auto}
+.mob-tabs .tab{flex:1;text-align:center;font-size:12px;padding:10px 8px}
 
-.page{display:none}.page.active{display:block}
+/* ── PAGES ── */
+.page{display:none}.page.on{display:block}
 
-/* HERO */
-.hero{padding:80px 24px 64px;max-width:860px;margin:0 auto;text-align:center}
-.hero-eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:16px}
-.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:700;line-height:1.2;margin-bottom:20px;letter-spacing:-.3px}
+/* ── PROOF BAR ── */
+.proof{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;padding:13px 24px;background:var(--bg2);border-bottom:1px solid var(--border)}
+.proof-i{font-size:.78rem;color:var(--text3);display:flex;align-items:center;gap:5px}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0}
+
+/* ── HERO ── */
+.hero{padding:76px 24px 52px;max-width:840px;margin:0 auto;text-align:center}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.hero h1{font-size:clamp(1.85rem,5vw,3.2rem);font-weight:700;line-height:1.2;margin-bottom:16px;letter-spacing:-.3px}
 .hero h1 em{font-style:normal;color:var(--green)}
-.hero-sub{font-size:clamp(.95rem,2vw,1.15rem);color:var(--text2);max-width:620px;margin:0 auto 12px;line-height:1.75}
-.hero-crosslink{font-size:.88rem;color:var(--text3);margin-bottom:36px}
-.hero-crosslink a{color:var(--green);font-weight:600;text-decoration:underline}
-.hero-bullets{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:36px}
-.hero-bullet{background:rgba(74,199,138,.1);border:1px solid rgba(74,199,138,.25);color:var(--green);font-size:.82rem;font-weight:600;padding:6px 16px;border-radius:50px}
-.cta-center{display:flex;justify-content:center}
-.btn-main{background:var(--blue);color:#fff;padding:15px 40px;border-radius:var(--radius);font-weight:700;font-size:16px;border:none;cursor:pointer;transition:all .2s;letter-spacing:.2px}
-.btn-main:hover{background:#1a55c8;transform:translateY(-1px)}
-.btn-outline{background:transparent;color:var(--text);padding:15px 32px;border-radius:var(--radius);font-weight:600;font-size:15px;border:1px solid var(--border2);cursor:pointer;transition:all .2s}
-.btn-outline:hover{border-color:var(--green);color:var(--green)}
+.hero-sub{font-size:clamp(.9rem,2vw,1.08rem);color:var(--text2);max-width:580px;margin:0 auto 10px;line-height:1.75}
+.xlink{font-size:.84rem;color:var(--text3);margin-bottom:30px}
+.xlink a{color:var(--green);font-weight:600;text-decoration:underline;cursor:pointer}
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px}
+.pill{background:rgba(74,199,138,.1);border:1px solid rgba(74,199,138,.22);color:var(--green);font-size:.76rem;font-weight:600;padding:5px 13px;border-radius:50px}
+.hero-cta{display:flex;flex-direction:column;align-items:center;gap:7px}
+.sp{font-size:.74rem;color:var(--text3)}
+.stats{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:34px;padding-top:26px;border-top:1px solid var(--border)}
+.stat-n{font-size:1.45rem;font-weight:700;color:var(--green);line-height:1}
+.stat-l{font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-top:3px}
 
-/* DIVIDER */
-.divider{height:1px;background:var(--border);max-width:1060px;margin:0 auto}
+/* ── BUTTONS ── */
+.btn{background:var(--blue);color:#fff;padding:13px 34px;border-radius:var(--r);font-weight:700;font-size:14px;border:none;cursor:pointer;transition:all .2s}
+.btn:hover{background:#1a55c8;transform:translateY(-1px)}
+.btn-o{background:transparent;color:var(--text);padding:13px 26px;border-radius:var(--r);font-weight:600;font-size:13px;border:1px solid var(--border2);cursor:pointer;transition:all .2s}
+.btn-o:hover{border-color:var(--green);color:var(--green)}
+.li-svg{fill:#4AC78A;flex-shrink:0}
 
-/* SECTIONS */
-.section{padding:64px 24px;max-width:900px;margin:0 auto}
-.section-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:10px}
-.section h2{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;line-height:1.25;margin-bottom:12px}
-.section-sub{font-size:1rem;color:var(--text2);max-width:600px;line-height:1.7;margin-bottom:36px}
+/* ── DIVIDER ── */
+.div{height:1px;background:var(--border);max-width:1060px;margin:0 auto}
 
-/* OFFER LIST */
-.offer-list{list-style:none;display:flex;flex-direction:column;gap:20px;max-width:720px}
-.offer-list li{display:flex;align-items:flex-start;gap:16px;padding:20px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius)}
-.offer-list li.featured{border-color:var(--green)}
-.offer-check{width:22px;height:22px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;font-size:12px;color:#0a0f1a;font-weight:700}
-.offer-content strong{display:block;font-size:.98rem;font-weight:600;margin-bottom:3px;color:var(--text)}
-.offer-content span{font-size:.88rem;color:var(--text2);line-height:1.5}
+/* ── SECTIONS ── */
+.sec{padding:56px 24px;max-width:880px;margin:0 auto}
+.sec-lbl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:9px}
+.sec-h{font-size:clamp(1.35rem,3.5vw,2rem);font-weight:700;line-height:1.25;margin-bottom:11px}
+.sec-sub{font-size:.95rem;color:var(--text2);max-width:580px;line-height:1.7;margin-bottom:30px}
 
-/* BULLET LIST */
-.bullet-list{list-style:none;display:flex;flex-direction:column;gap:12px;max-width:640px}
-.bullet-list li{display:flex;align-items:flex-start;gap:12px;font-size:.98rem;color:var(--text2);line-height:1.6}
-.bullet-list li::before{content:'—';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+/* ── OFFER LIST ── */
+.offers{list-style:none;display:flex;flex-direction:column;gap:12px;max-width:700px}
+.offer{display:flex;align-items:flex-start;gap:13px;padding:16px 18px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r)}
+.offer.hi{border-color:rgba(74,199,138,.38)}
+.chk{width:19px;height:19px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;color:#0a0f1a;font-size:10px;font-weight:700}
+.offer strong{display:block;font-size:.92rem;font-weight:600;margin-bottom:2px}
+.offer span{font-size:.83rem;color:var(--text2);line-height:1.5}
 
-/* MID CTA */
-.mid-cta{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 24px;text-align:center}
-.mid-cta p{color:var(--text2);font-size:.95rem;margin-bottom:18px}
+/* ── MID CTA ── */
+.mcta{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:40px 24px;text-align:center}
+.mcta p{color:var(--text2);font-size:.9rem;margin-bottom:14px}
 
-/* TESTIMONIALS */
-.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.testi{background:var(--bg3);border-left:3px solid var(--green);border-radius:0 var(--radius) var(--radius) 0;padding:24px}
-.testi-text{font-size:.92rem;color:var(--text2);line-height:1.7;margin-bottom:14px;font-style:italic}
-.testi-author{font-size:.82rem;font-weight:600;color:var(--text3)}
+/* ── VIDEO + TESTIMONIALS ── */
+.vid-wrap{max-width:340px;margin:0 auto 28px;border-radius:var(--r2);overflow:hidden;border:1px solid var(--border)}
+.vid-wrap iframe{width:100%;aspect-ratio:9/16;border:none}
+.testis{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.testi{background:var(--bg3);border-left:3px solid var(--green);border-radius:0 var(--r) var(--r) 0;padding:20px}
+.testi-t{font-size:.86rem;color:var(--text2);line-height:1.7;margin-bottom:10px;font-style:italic}
+.testi-a{font-size:.76rem;font-weight:600;color:var(--text3)}
 
-/* CALC */
-.calc-wrap{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:36px 32px;max-width:800px}
-.calc-title{font-size:1.2rem;font-weight:700;margin-bottom:6px}
-.calc-sub{font-size:.88rem;color:var(--text2);margin-bottom:24px}
-.calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px}
-.calc-field label{display:block;font-size:11px;font-weight:600;letter-spacing:.5px;color:var(--text3);text-transform:uppercase;margin-bottom:5px}
-.calc-field input{width:100%;background:var(--bg4);border:1px solid var(--border2);border-radius:var(--radius);color:var(--text);font-size:.95rem;padding:9px 12px;outline:none;transition:border-color .2s}
-.calc-field input:focus{border-color:var(--green)}
-.calc-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:20px}
-.result-card{background:var(--bg4);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center}
-.rc-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px}
-.rc-val{font-size:1.3rem;font-weight:700;color:var(--green)}
-.rc-val.big{font-size:1.6rem}
-.calc-motivation{background:rgba(74,199,138,.08);border:1px solid rgba(74,199,138,.25);border-radius:var(--radius);padding:14px 18px;font-size:.9rem;color:#a8e6c8;line-height:1.6;margin-bottom:20px;text-align:center}
-.chart-wrap{height:180px}
+/* ── BUYOUT BOX ── */
+.buyout{background:var(--bg3);border:1px solid rgba(74,199,138,.32);border-radius:var(--r2);padding:26px;text-align:center;max-width:540px;margin:0 auto 32px}
+.buyout-n{font-size:clamp(1.9rem,5vw,3rem);font-weight:700;color:var(--green);line-height:1}
+.buyout-s{font-size:.83rem;color:var(--text2);margin-top:5px;margin-bottom:14px}
+.buyout-row{display:flex;align-items:center;gap:9px;justify-content:center;flex-wrap:wrap;padding-top:14px;border-top:1px solid var(--border)}
+.buyout-row span{color:var(--text2);font-size:.86rem}
+.buyout-row input{background:var(--bg4);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-size:.9rem;padding:8px 11px;outline:none;width:130px;transition:border-color .2s}
+.buyout-row input:focus{border-color:var(--green)}
+.buyout-res{font-size:1.25rem;font-weight:700;color:var(--green)}
 
-/* BUYOUT */
-.buyout-box{background:var(--bg3);border:1px solid var(--green);border-radius:var(--radius2);padding:32px;text-align:center;max-width:600px;margin:0 auto}
-.buyout-num{font-size:clamp(2rem,6vw,3.5rem);font-weight:700;color:var(--green);line-height:1}
-.buyout-label{font-size:.88rem;color:var(--text2);margin-top:6px}
-.buyout-calc-row{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
-.buyout-calc-row span{color:var(--text2);font-size:.9rem}
-.buyout-calc-row input{background:var(--bg4);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-size:.95rem;padding:9px 12px;outline:none;width:150px}
-.buyout-result{font-size:1.4rem;font-weight:700;color:var(--green)}
+/* ── CALC ── */
+.calc{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r2);padding:28px}
+.calc-h{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.calc-s{font-size:.82rem;color:var(--text2);margin-bottom:20px}
+.calc-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px;margin-bottom:18px}
+.cf label{display:block;font-size:10px;font-weight:600;letter-spacing:.5px;color:var(--text3);text-transform:uppercase;margin-bottom:4px}
+.cf input{width:100%;background:var(--bg4);border:1px solid var(--border2);border-radius:var(--r);color:var(--text);font-size:.9rem;padding:9px 11px;outline:none;transition:border-color .2s}
+.cf input:focus{border-color:var(--green)}
+.calc-res{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-bottom:16px}
+.rc{background:var(--bg4);border:1px solid var(--border);border-radius:var(--r);padding:12px;text-align:center}
+.rc-l{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.rc-v{font-size:1.1rem;font-weight:700;color:var(--green)}
+.rc-v.big{font-size:1.4rem}
+.calc-msg{background:rgba(74,199,138,.07);border:1px solid rgba(74,199,138,.18);border-radius:var(--r);padding:11px 15px;font-size:.83rem;color:#a8e6c8;line-height:1.6;margin-bottom:16px;text-align:center}
+.chart-box{height:170px}
 
-/* FAQ */
-.faq-item{border-bottom:1px solid var(--border)}
-.faq-q{width:100%;background:transparent;border:none;color:var(--text);font-size:.98rem;font-weight:500;text-align:left;padding:16px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.faq-q::after{content:'+';font-size:1.3rem;color:var(--green);flex-shrink:0;transition:transform .2s}
-.faq-item.open .faq-q::after{transform:rotate(45deg)}
-.faq-a{overflow:hidden;max-height:0;transition:max-height .3s ease}
-.faq-item.open .faq-a{max-height:300px}
-.faq-a p{padding:0 0 16px;color:var(--text2);font-size:.92rem;line-height:1.7}
+/* ── NEXT STEPS ── */
+.next-bg{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:44px 24px;text-align:center}
+.next-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px;max-width:680px;margin:22px auto 0}
+.ns{text-align:center}
+.ns-circle{width:42px;height:42px;border-radius:50%;background:rgba(74,199,138,.1);border:1px solid var(--green);color:var(--green);font-size:1.05rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 9px}
+.ns-t{font-size:.88rem;font-weight:600;margin-bottom:3px}
+.ns-d{font-size:.78rem;color:var(--text2);line-height:1.5}
 
-/* LEAD FORM */
-.form-wrap{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:40px 36px;max-width:580px;margin:0 auto}
-.form-wrap h3{font-size:1.5rem;font-weight:700;margin-bottom:6px}
-.form-wrap>p{color:var(--text2);margin-bottom:28px;font-size:.92rem}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
-.form-full{grid-column:1/-1}
-.form-field{display:flex;flex-direction:column;gap:5px}
-.form-field label{font-size:10px;font-weight:700;letter-spacing:.6px;color:var(--text3);text-transform:uppercase}
-.form-field input,.form-field select{background:var(--bg4);border:1px solid var(--border2);border-radius:var(--radius);color:var(--text);font-size:.92rem;padding:10px 12px;outline:none;transition:border-color .2s;font-family:inherit}
-.form-field input:focus,.form-field select:focus{border-color:var(--green)}
-.form-field select option{background:var(--bg4)}
-.submit-btn{width:100%;background:var(--blue);color:#fff;padding:14px;border-radius:var(--radius);font-weight:700;font-size:15px;border:none;cursor:pointer;margin-top:10px;transition:all .2s}
-.submit-btn:hover{background:#1a55c8;transform:translateY(-1px)}
-.form-disclaimer{font-size:.72rem;color:var(--text3);margin-top:10px;text-align:center}
-.form-error{color:#e2584a;font-size:.8rem;margin-top:4px;display:none}
+/* ── FAQ ── */
+.faqs{max-width:660px}
+.faq{border-bottom:1px solid var(--border)}
+.faq-q{width:100%;background:transparent;border:none;color:var(--text);font-size:.92rem;font-weight:500;text-align:left;padding:14px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.faq-q::after{content:'+';font-size:1.25rem;color:var(--green);flex-shrink:0;transition:transform .2s}
+.faq.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{overflow:hidden;max-height:0;transition:max-height .35s ease}
+.faq.open .faq-a{max-height:240px}
+.faq-a p{padding:0 0 14px;color:var(--text2);font-size:.86rem;line-height:1.7}
 
-/* NSM */
-.nsm-card{display:flex;flex-wrap:wrap;gap:28px;align-items:center;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);padding:32px}
-.nsm-photo{width:140px;height:140px;border-radius:50%;object-fit:cover;object-position:top center;border:3px solid var(--green);flex-shrink:0}
-.nsm-info h3{font-size:1.3rem;font-weight:700;margin-bottom:4px}
-.nsm-title{color:var(--green);font-size:.88rem;font-weight:600;margin-bottom:12px}
-.nsm-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.nsm-badge{background:rgba(74,199,138,.1);border:1px solid rgba(74,199,138,.2);color:var(--green);font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:50px}
-.nsm-quote{font-size:.9rem;color:var(--text2);line-height:1.7;font-style:italic;margin-bottom:14px}
-.nsm-contact{display:flex;flex-wrap:wrap;gap:16px}
-.nsm-contact a{color:var(--green);font-size:.85rem;font-weight:600}
+/* ── TEAM GRID ── */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:12px;margin-top:22px}
+.tc{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r2);padding:16px 12px;text-align:center;transition:border-color .2s}
+.tc:hover{border-color:var(--green)}
+.tc-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:top center;border:2px solid var(--green);background:var(--bg4);margin:0 auto 9px}
+.tc-name{font-size:.88rem;font-weight:700;margin-bottom:1px}
+.tc-role{font-size:.68rem;color:var(--text3);margin-bottom:3px}
+.tc-team{font-size:.72rem;font-weight:600;color:var(--green);margin-bottom:3px}
+.tc-email{font-size:.65rem;color:var(--text3);word-break:break-all;margin-bottom:5px;line-height:1.3}
+.tc-detail{font-size:.65rem;color:var(--text3);margin-bottom:5px;line-height:1.3}
+.li-btn{display:inline-flex;align-items:center;gap:3px;color:var(--green);font-size:.66rem;font-weight:600}
 
-/* FINAL CTA */
-.final-cta{background:var(--bg2);border-top:1px solid var(--border);padding:72px 24px;text-align:center}
-.final-cta h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;margin-bottom:12px}
-.final-cta p{color:var(--text2);font-size:1rem;max-width:500px;margin:0 auto 28px}
+/* ── FORM ── */
+.form-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r2);padding:32px;max-width:540px;margin:0 auto}
+.form-card h3{font-size:1.35rem;font-weight:700;margin-bottom:5px}
+.form-card>p{color:var(--text2);font-size:.86rem;margin-bottom:8px}
+.urgency{display:flex;align-items:center;gap:5px;font-size:.76rem;color:var(--text3);margin-bottom:20px}
+.u-dot{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.ff{grid-column:1/-1}
+.field{display:flex;flex-direction:column;gap:3px}
+.field label{font-size:10px;font-weight:700;letter-spacing:.5px;color:var(--text3);text-transform:uppercase}
+.field input{background:var(--bg4);border:1px solid var(--border2);border-radius:var(--r);color:var(--text);font-size:.88rem;padding:10px 11px;outline:none;transition:border-color .2s;font-family:inherit}
+.field input:focus{border-color:var(--green)}
+.ferr{font-size:.72rem;color:#e2584a;display:none;margin-top:1px}
+.sub-btn{width:100%;background:var(--blue);color:#fff;padding:13px;border-radius:var(--r);font-weight:700;font-size:14px;border:none;cursor:pointer;margin-top:10px;transition:all .2s}
+.sub-btn:hover{background:#1a55c8;transform:translateY(-1px)}
+.txt-cta{text-align:center;font-size:.78rem;color:var(--text3);margin-top:9px}
+.txt-cta a{color:var(--green);font-weight:600}
+.disc{font-size:.68rem;color:var(--text3);margin-top:7px;text-align:center;line-height:1.5}
 
-/* STICKY */
-.sticky-bar{position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-top:1px solid var(--border);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:99}
-.sticky-text strong{display:block;font-size:.88rem;color:var(--text)}
-.sticky-text p{font-size:.78rem;color:var(--text3)}
-.sticky-btns{display:flex;gap:8px}
-.sticky-btns .btn-main{padding:10px 20px;font-size:13px}
-.sticky-btns .btn-outline{padding:10px 16px;font-size:13px}
+/* ── FINAL CTA ── */
+.fcta{background:var(--bg2);border-top:1px solid var(--border);padding:60px 24px;text-align:center}
+.fcta h2{font-size:clamp(1.4rem,3.5vw,2.1rem);font-weight:700;margin-bottom:11px}
+.fcta p{color:var(--text2);font-size:.92rem;max-width:460px;margin:0 auto 22px}
+.fcta-contact{margin-top:18px;font-size:.76rem;color:var(--text3)}
+.fcta-contact a{color:var(--text3)}
 
-/* PROOF BAR */
-.proof-bar{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;padding:16px 24px;background:var(--bg2);border-bottom:1px solid var(--border)}
-.proof-item{font-size:.8rem;color:var(--text3);display:flex;align-items:center;gap:6px}
-.proof-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0}
+/* ── STICKY ── */
+.sticky{position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-top:1px solid var(--border);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:99}
+.sticky-info strong{display:block;font-size:.83rem;color:var(--text)}
+.sticky-info p{font-size:.72rem;color:var(--text3)}
+.sticky-btns{display:flex;gap:7px;flex-shrink:0}
+.sticky-btns .btn{padding:8px 16px;font-size:12px}
+.sticky-btns .btn-o{padding:8px 13px;font-size:12px}
 
-/* MODAL */
-.cal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:9999;overflow-y:auto}
-.cal-modal{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius2);padding:36px 32px;max-width:500px;width:90%;text-align:center;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
-.cal-close{position:absolute;top:12px;right:16px;background:transparent;border:none;color:var(--text3);font-size:1.6rem;cursor:pointer}
-.cal-close:hover{color:var(--text)}
-.cal-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:20px}
-.cal-badge{background:rgba(45,107,228,.1);border:1px solid rgba(45,107,228,.25);color:#7ab0f0;font-size:.78rem;font-weight:600;padding:4px 12px;border-radius:50px}
+/* ── MODAL ── */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.82);z-index:9999;overflow-y:auto}
+.modal-box{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r2);padding:28px 24px;max-width:460px;width:90%;text-align:center;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.modal-x{position:absolute;top:9px;right:13px;background:transparent;border:none;color:var(--text3);font-size:1.4rem;cursor:pointer;line-height:1}
+.modal-x:hover{color:var(--text)}
+.m-badges{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:12px 0 18px}
+.m-badge{background:rgba(45,107,228,.1);border:1px solid rgba(45,107,228,.22);color:#7ab0f0;font-size:.73rem;font-weight:600;padding:4px 11px;border-radius:50px}
 
-/* FOOTER */
-footer{padding:28px 24px;text-align:center;color:var(--text3);font-size:.78rem;border-top:1px solid var(--border)}
+/* ── FOOTER ── */
+footer{padding:22px 24px;text-align:center;color:var(--text3);font-size:.73rem;border-top:1px solid var(--border)}
+footer p+p{margin-top:5px}
+footer a{color:var(--text3)}
 
+/* ── RESPONSIVE ── */
 @media(max-width:768px){
-  .nav-tabs{display:none}
-  .nav{flex-direction:column;gap:10px;align-items:flex-start}
-  .mobile-tabs{display:flex;width:100%;overflow-x:auto;gap:0;border-bottom:1px solid var(--border)}
-  .tab-btn{flex:1;font-size:12px;padding:10px 8px;text-align:center}
-  .hero{padding:48px 16px 40px}
-  .hero h1{font-size:clamp(1.6rem,6vw,2.2rem)}
-  .section{padding:40px 16px}
-  .form-row{grid-template-columns:1fr}
-  .form-wrap{padding:24px 16px}
-  .nsm-card{flex-direction:column;align-items:center;text-align:center;padding:24px 16px}
-  .nsm-contact{justify-content:center}
-  .nsm-badges{justify-content:center}
-  .calc-wrap{padding:20px 14px}
-  .calc-grid{grid-template-columns:1fr}
-  .calc-results{grid-template-columns:1fr 1fr}
-  .sticky-text{display:none}
-  .sticky-btns .btn-main,.sticky-btns .btn-outline{padding:9px 14px;font-size:12px}
-  .mid-cta{padding:36px 16px}
-  .final-cta{padding:48px 16px}
-  .testi-grid{grid-template-columns:1fr}
-  .buyout-box{padding:20px 16px}
-  .cal-modal{padding:28px 18px}
-  .proof-bar{gap:12px}
-  .proof-item{font-size:.74rem}
+  .tabs{display:none}
+  .mob-tabs{display:flex}
+  .hero{padding:44px 16px 32px}
+  .sec{padding:36px 16px}
+  .frow{grid-template-columns:1fr}
+  .form-card{padding:22px 14px}
+  .team-grid{grid-template-columns:repeat(auto-fit,minmax(135px,1fr))}
+  .mcta{padding:28px 16px}
+  .fcta{padding:44px 16px}
+  .testis{grid-template-columns:1fr}
+  .calc-fields{grid-template-columns:1fr}
+  .calc-res{grid-template-columns:1fr 1fr}
+  .buyout{padding:18px 12px}
+  .sticky-info{display:none}
+  .proof{gap:10px;padding:11px 14px}
+  .next-bg{padding:36px 14px}
 }
-@media(min-width:769px){.mobile-tabs{display:none}}
+@media(max-width:380px){
+  .calc-res{grid-template-columns:1fr}
+  .hero h1{font-size:1.65rem}
+}
 </style>
 </head>
 <body>
 
-<!-- MODAL -->
-<div class="cal-overlay" id="cal-overlay" onclick="closeCalModal(event)" style="display:none">
-  <div class="cal-modal">
-    <button class="cal-close" onclick="document.getElementById('cal-overlay').style.display='none'">×</button>
-    <div style="font-size:2.5rem;margin-bottom:12px">🎉</div>
-    <h3 style="font-size:1.4rem;font-weight:700;margin-bottom:8px;color:var(--green)">Congratulations on Taking the First Step to Financial Freedom!</h3>
-    <p style="color:var(--text2);font-size:.92rem;line-height:1.6;margin-bottom:20px">Your information has been received. Coleman will be in touch within 24 hours. Want to skip the wait? Book your call right now.</p>
-    <div class="cal-badges">
-      <span class="cal-badge">20 minutes</span>
-      <span class="cal-badge">No pressure</span>
-      <span class="cal-badge">Real conversation</span>
+<!-- ══ MODAL ══ -->
+<div class="modal" id="modal" onclick="closeModal(event)" style="display:none">
+  <div class="modal-box">
+    <button class="modal-x" onclick="document.getElementById('modal').style.display='none'">×</button>
+    <div style="font-size:2rem;margin-bottom:9px">🎉</div>
+    <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:7px;color:var(--green)">Congratulations on Taking the First Step to Financial Freedom!</h3>
+    <p style="color:var(--text2);font-size:.85rem;line-height:1.6;margin-bottom:14px">Your information has been received. A Team Steel National Sales Director will be in touch within 24 business hours. Want to skip the wait?</p>
+    <div class="m-badges">
+      <span class="m-badge">20 minutes</span>
+      <span class="m-badge">No pressure</span>
+      <span class="m-badge">Real conversation</span>
     </div>
-    <button class="btn-main" style="width:100%;font-size:1rem;padding:14px" onclick="window.open('https://calendly.com/coleman-clark/freedom','_blank')">Book My Call Now →</button>
-    <p style="color:var(--text3);font-size:.72rem;margin-top:14px">Or wait for Coleman to reach out personally within 24 hours.<br><a href="tel:2148023388" style="color:var(--text3)">214.802.3388</a> &nbsp;|&nbsp; coleman.clark@wholesalepayments.com</p>
+    <button class="btn" style="width:100%;font-size:.92rem;padding:12px" onclick="window.open('https://calendly.com/coleman-clark/freedom','_blank')">Book My Call Now →</button>
+    <p style="color:var(--text3);font-size:.68rem;margin-top:11px">Or we'll reach out within 24 business hours.<br><a href="tel:2148023388" style="color:var(--text3)">214.802.3388</a> · coleman.clark@wholesalepayments.com</p>
   </div>
 </div>
 
-<!-- NAV -->
+<!-- ══ NAV ══ -->
 <nav class="nav">
-  <div class="nav-brand">Team <span>Steel</span></div>
-  <div class="nav-tabs">
-    <button class="tab-btn active" onclick="switchPage('a')">⚡ Experienced Sales Reps</button>
-    <button class="tab-btn" onclick="switchPage('b')">🔥 New to Sales / Entrepreneurs</button>
+  <div class="brand">Team <span>Steel</span></div>
+  <div class="tabs">
+    <button class="tab on" onclick="switchPage('a')">⚡ Experienced Sales Reps</button>
+    <button class="tab" onclick="switchPage('b')">🔥 New to Sales / Entrepreneurs</button>
   </div>
 </nav>
-<div class="mobile-tabs">
-  <button class="tab-btn active" onclick="switchPage('a')">⚡ Experienced Reps</button>
-  <button class="tab-btn" onclick="switchPage('b')">🔥 New to Sales</button>
+<div class="mob-tabs">
+  <button class="tab on" onclick="switchPage('a')">⚡ Experienced Reps</button>
+  <button class="tab" onclick="switchPage('b')">🔥 New to Sales</button>
 </div>
 
-<!-- ===== PAGE A ===== -->
-<div class="page active" id="page-a">
+<!-- ════════════════ PAGE A ════════════════ -->
+<div class="page on" id="page-a">
 
-  <div class="proof-bar">
-    <div class="proof-item"><span class="proof-dot"></span>#3 Fastest Growing ISO — Fortune 5,000</div>
-    <div class="proof-item"><span class="proof-dot"></span>18 Years in Business</div>
-    <div class="proof-item"><span class="proof-dot"></span>$7B+ Annual Volume</div>
-    <div class="proof-item"><span class="proof-dot"></span>400+ Employees</div>
-    <div class="proof-item"><span class="proof-dot"></span>Google 4.6 ★★★★★</div>
+  <div class="proof">
+    <div class="proof-i"><span class="dot"></span>#3 Fastest Growing ISO — Fortune 5,000</div>
+    <div class="proof-i"><span class="dot"></span>18 Years in Business</div>
+    <div class="proof-i"><span class="dot"></span>$7B+ Annual Volume</div>
+    <div class="proof-i"><span class="dot"></span>400+ Employees</div>
+    <div class="proof-i"><span class="dot"></span>Google 4.6 ★★★★★</div>
   </div>
 
   <div class="hero">
-    <div class="hero-eyebrow">Experienced Sales Reps Only</div>
+    <div class="eyebrow">Experienced Sales Reps Only</div>
     <h1>Stop Starting Over Every Month.<br><em>Build a Six Figure Income in Merchant Services.</em></h1>
-    <p class="hero-sub">Team Steel is one of the top performing teams inside Wholesale Payments — the only ISO that pays daily, offers a 45x buyout, and sets your appointments for you. You already know how to close — let's do it without your income resetting every 30 days.</p>
-    <p class="hero-crosslink">No experience? <a onclick="switchPage('b')">We've got an offer for you too →</a></p>
-    <div class="hero-bullets">
-      <span class="hero-bullet">Residual Income for Life</span>
-      <span class="hero-bullet">$800–$3,000 Per Deal</span>
-      <span class="hero-bullet">45x Portfolio Buyout</span>
-      <span class="hero-bullet">Daily Pay</span>
+    <p class="hero-sub">Team Steel is one of the top performing groups inside Wholesale Payments — the only ISO that pays daily, offers a 45x buyout, and sets your appointments for you. You already know how to close — let's do it without your income resetting every 30 days.</p>
+    <p class="xlink">No sales experience? <a onclick="switchPage('b')">We have an offer for you too →</a></p>
+    <div class="pills">
+      <span class="pill">Residual Income for Life</span>
+      <span class="pill">$800–$3,000 Per Deal</span>
+      <span class="pill">45x Portfolio Buyout</span>
+      <span class="pill">Daily Pay</span>
     </div>
-    <div class="cta-center" style="flex-direction:column;align-items:center;gap:10px">
-      <button class="btn-main" onclick="scrollToEl('a-form')">See If You're a Fit →</button>
-      <p style="font-size:.78rem;color:var(--text3)">Joining 400+ active reps nationwide · Limited spots available in your area</p>
+    <div class="hero-cta">
+      <button class="btn" onclick="goTo('a-form')">See If You're a Fit →</button>
+      <span class="sp">Joining 400+ active reps nationwide · Limited spots available</span>
+    </div>
+    <div class="stats">
+      <div><div class="stat-n">7</div><div class="stat-l">Directors on Team Steel</div></div>
+      <div><div class="stat-n">$7B+</div><div class="stat-l">Annual Volume</div></div>
+      <div><div class="stat-n">45x</div><div class="stat-l">Portfolio Buyout</div></div>
+      <div><div class="stat-n">Daily</div><div class="stat-l">Pay</div></div>
+      <div><a href="https://www.linkedin.com/in/coleman-clark-14a518251/" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--green);font-size:.74rem;font-weight:600"><svg width="18" height="18" viewBox="0 0 24 24" class="li-svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></div>
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="div"></div>
 
-  <!-- THE OFFER -->
-  <div class="section">
-    <p class="section-label">The Offer</p>
-    <h2>What Wholesale Payments Puts on the Table</h2>
-    <p class="section-sub">This isn't your standard sales gig. From day one you can expect:</p>
-    <ul class="offer-list">
-      <li class="featured">
-        <div class="offer-check">✓</div>
-        <div class="offer-content"><strong>2–3 Pre-Set Appointments Daily</strong><span>Qualified merchant appointments set for you every day — you show up and close.</span></div>
-      </li>
-      <li class="featured">
-        <div class="offer-check">✓</div>
-        <div class="offer-content"><strong>$800–$3,000 Per Deal</strong><span>Upfront commission on every account with volume bonuses on top.</span></div>
-      </li>
-      <li class="featured">
-        <div class="offer-check">✓</div>
-        <div class="offer-content"><strong>45x Buyout Opportunity</strong><span>$10,000/month residual portfolio = $450,000 buyout. Your book is a real asset.</span></div>
-      </li>
-      <li>
-        <div class="offer-check">✓</div>
-        <div class="offer-content"><strong>$15,000 Fast Start Bonus</strong><span>Hit your early ramp targets and earn a significant bonus on top of commissions.</span></div>
-      </li>
-      <li>
-        <div class="offer-check">✓</div>
-        <div class="offer-content"><strong>Daily Pay</strong><span>Get paid the same day your deals are processed — no waiting on payroll cycles.</span></div>
-      </li>
-      <li>
-        <div class="offer-check">✓</div>
-        <div class="offer-content"><strong>Lifetime Vested Residuals</strong><span>Every merchant you close pays you monthly for life. Your portfolio grows every month.</span></div>
-      </li>
-      <li>
-        <div class="offer-check">✓</div>
-        <div class="offer-content"><strong>Dedicated Industry Support</strong><span>Direct support from industry veterans with nearly two decades of experience behind you.</span></div>
-      </li>
+  <!-- OFFER -->
+  <div class="sec">
+    <p class="sec-lbl">The Offer</p>
+    <h2 class="sec-h">What Wholesale Payments Puts on the Table</h2>
+    <p class="sec-sub">This isn't your standard sales gig. From day one you can expect:</p>
+    <ul class="offers">
+      <li class="offer hi"><div class="chk">✓</div><div><strong>2–3 Pre-Set Appointments Daily</strong><span>Qualified merchant appointments set for you every day — you show up and close.</span></div></li>
+      <li class="offer hi"><div class="chk">✓</div><div><strong>$800–$3,000 Per Deal</strong><span>Upfront commission on every account with volume bonuses on top.</span></div></li>
+      <li class="offer hi"><div class="chk">✓</div><div><strong>45x Buyout Opportunity</strong><span>$10,000/month residual portfolio = $450,000 buyout. Your book is a real asset.</span></div></li>
+      <li class="offer"><div class="chk">✓</div><div><strong>$15,000 Fast Start Bonus</strong><span>Hit your early ramp targets and earn a significant bonus on top of commissions.</span></div></li>
+      <li class="offer"><div class="chk">✓</div><div><strong>Daily Pay</strong><span>Get paid the same day your deals are processed — no waiting on payroll cycles.</span></div></li>
+      <li class="offer"><div class="chk">✓</div><div><strong>Lifetime Vested Residuals</strong><span>Every merchant you close pays you monthly for life. Your portfolio grows every month.</span></div></li>
+      <li class="offer"><div class="chk">✓</div><div><strong>Dedicated Industry Support</strong><span>National Sales Directors with decades of combined experience in your corner from day one.</span></div></li>
     </ul>
   </div>
 
-  <div class="mid-cta">
-    <p>Think you might be a fit?</p>
-    <button class="btn-main" onclick="scrollToEl('a-form')">See If You're a Fit →</button>
-  </div>
-
-  <div class="divider"></div>
+  <div class="mcta"><p>Think you might be a fit?</p><button class="btn" onclick="goTo('a-form')">See If You're a Fit →</button></div>
+  <div class="div"></div>
 
   <!-- TESTIMONIALS -->
-  <div class="section">
-    <p class="section-label">What Reps Are Saying</p>
-    <h2>Don't Just Take Our Word For It</h2>
-    <p class="section-sub">Here's what active sales reps have to say:</p>
-    <div style="max-width:380px;margin:0 auto 36px;border-radius:var(--radius2);overflow:hidden;border:1px solid var(--border)">
-      <iframe src="https://www.youtube.com/embed/MCQOjYoR41k" title="Rep Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;display:block"></iframe>
-    </div>
-    <div class="testi-grid">
-      <div class="testi">
-        <p class="testi-text">"I spent 6 years in insurance hitting the same ceiling. My first year here I built over $3,000/month in residuals on top of my upfronts. Completely different game."</p>
-        <div class="testi-author">M.R. — Atlanta, GA &nbsp;·&nbsp; Former Insurance Rep</div>
+  <div class="sec">
+    <p class="sec-lbl">What Reps Are Saying</p>
+    <h2 class="sec-h">Don't Just Take Our Word For It</h2>
+    <p class="sec-sub">Real feedback from active sales reps — including a video from one of our closers:</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:720px;margin:0 auto 28px">
+      <div class="vid-wrap" style="margin:0">
+        <iframe src="https://www.youtube.com/embed/MCQOjYoR41k" title="Rep Testimonial 1" allowfullscreen></iframe>
       </div>
-      <div class="testi">
-        <p class="testi-text">"The pre-set appointments were the game changer. I wasn't cold calling all day — I was closing. Hit the Fast Start Bonus my first month and haven't looked back."</p>
-        <div class="testi-author">T.K. — Columbus, OH &nbsp;·&nbsp; Former Auto Sales</div>
+      <div class="vid-wrap" style="margin:0">
+        <iframe src="https://www.youtube.com/embed/J75v_-PRsWw" title="Rep Testimonial 2" allowfullscreen></iframe>
       </div>
-      <div class="testi">
-        <p class="testi-text">"When I found out my residuals were worth 45x at buyout, I completely changed how I thought about this business. It's not a job — it's an asset."</p>
-        <div class="testi-author">D.J. — Phoenix, AZ &nbsp;·&nbsp; B2B Sales Background</div>
+      <div class="vid-wrap" style="margin:0">
+        <iframe src="https://www.youtube.com/embed/SbQZu_dncGE" title="Rep Testimonial 3" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="div"></div>
 
   <!-- NUMBERS -->
-  <div class="section">
-    <p class="section-label">The Numbers</p>
-    <h2>Let's Look at What You Could Build</h2>
-    <p class="section-sub">The 45x buyout turns monthly residuals into life-changing lump sums. Run your own numbers below.</p>
-
-    <div class="buyout-box" style="margin-bottom:40px">
-      <div style="font-size:.85rem;color:var(--text2);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">45x Buyout Calculator</div>
-      <div class="buyout-num">$450,000</div>
-      <div class="buyout-label">Value of a $10,000/month residual portfolio at 45x</div>
-      <div class="buyout-calc-row">
+  <div class="sec" id="a-calc">
+    <p class="sec-lbl">The Numbers</p>
+    <h2 class="sec-h">Let's Look at What You Could Build</h2>
+    <p class="sec-sub">The 45x buyout turns monthly residuals into life-changing lump sums. Run your own numbers:</p>
+    <div class="buyout">
+      <div style="font-size:.74rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:5px">45x Buyout Calculator</div>
+      <div class="buyout-n" id="ba-disp">$450,000</div>
+      <div class="buyout-s">Value of a $10,000/month residual portfolio at 45x</div>
+      <div class="buyout-row">
         <span>$</span>
-        <input type="number" id="buyout-input" value="10000" oninput="updateBuyout()" placeholder="Monthly residual"/>
-        <span>/mo × 45 =</span>
-        <span class="buyout-result" id="buyout-result">$450,000</span>
+        <input type="number" id="ba-in" value="10000" oninput="cBuyout('a')"/>
+        <span>× 45 =</span>
+        <span class="buyout-res" id="ba-res">$450,000</span>
       </div>
     </div>
-
-    <div class="calc-wrap">
-      <div class="calc-title">Residual Income Builder</div>
-      <div class="calc-sub">Adjust the inputs — results update live. Based on ~1% of each merchant's monthly card volume.</div>
-      <div class="calc-grid">
-        <div class="calc-field"><label>Deals Per Month</label><input type="number" id="ca-deals" value="10" min="1" max="100"/></div>
-        <div class="calc-field"><label>Avg Card Volume / Account ($)</label><input type="number" id="ca-vol" value="25000" min="1000"/></div>
-        <div class="calc-field"><label>Residual % of Volume</label><input type="number" id="ca-pct" value="1" min="0.1" max="3" step="0.1"/></div>
-        <div class="calc-field"><label>Upfront Per Deal ($)</label><input type="number" id="ca-upfront" value="800" min="0"/></div>
-        <div class="calc-field"><label>Number of Months</label><input type="number" id="ca-months" value="12" min="1" max="60"/></div>
+    <div class="calc">
+      <div class="calc-h">Residual Income Builder</div>
+      <div class="calc-s">Adjust inputs — results update live. Based on ~1% of each merchant's monthly card volume.</div>
+      <div class="calc-fields">
+        <div class="cf"><label>Deals Per Month</label><input type="number" id="ca-deals" value="10" min="1" max="100"/></div>
+        <div class="cf"><label>Avg Card Volume / Account ($)</label><input type="number" id="ca-vol" value="25000" min="1000"/></div>
+        <div class="cf"><label>Residual % of Volume</label><input type="number" id="ca-pct" value="1" min="0.1" max="3" step="0.1"/></div>
+        <div class="cf"><label>Number of Months</label><input type="number" id="ca-months" value="12" min="1" max="60"/></div>
       </div>
-      <div class="calc-results">
-        <div class="result-card"><div class="rc-label">Total Accounts</div><div class="rc-val" id="ca-r1">—</div></div>
-        <div class="result-card"><div class="rc-label">Month-End Residual</div><div class="rc-val" id="ca-r2">—</div></div>
-        <div class="result-card"><div class="rc-label">Total Residual (Year)</div><div class="rc-val big" id="ca-r3">—</div></div>
-        <div class="result-card"><div class="rc-label">Total Upfront</div><div class="rc-val" id="ca-r4">—</div></div>
-        <div class="result-card"><div class="rc-label">Combined Income</div><div class="rc-val" id="ca-r5">—</div></div>
+      <div class="calc-res">
+        <div class="rc"><div class="rc-l">Total Accounts</div><div class="rc-v" id="ca-r1">—</div></div>
+        <div class="rc"><div class="rc-l">Month-End Residual</div><div class="rc-v" id="ca-r2">—</div></div>
+        <div class="rc"><div class="rc-l">Total Residual (Year)</div><div class="rc-v big" id="ca-r3">—</div></div>
+        <div class="rc"><div class="rc-l">Portfolio Buyout Value</div><div class="rc-v" id="ca-r4">—</div></div>
+        <div class="rc"><div class="rc-l">Cumulative Residual</div><div class="rc-v" id="ca-r5">—</div></div>
       </div>
-      <div class="calc-motivation" id="ca-motivation">Enter your numbers above to see your income projection.</div>
-      <div class="chart-wrap"><canvas id="ca-chart"></canvas></div>
+      <div class="calc-msg" id="ca-msg">Enter your numbers above to see your income projection.</div>
+      <div class="chart-box"><canvas id="ca-chart"></canvas></div>
     </div>
   </div>
 
-  <div class="mid-cta">
-    <p>Still have questions? Let's schedule a call.</p>
-    <button class="btn-main" onclick="scrollToEl('a-form')">See If You're a Fit →</button>
-  </div>
-
-  <div class="divider"></div>
+  <div class="mcta"><p>Like what you see? Let's talk.</p><button class="btn" onclick="goTo('a-form')">See If You're a Fit →</button></div>
+  <div class="div"></div>
 
   <!-- FAQ -->
-  <div class="section">
-    <p class="section-label">Still Have Questions?</p>
-    <h2>We've Got You Covered</h2>
-    <div style="max-width:680px;margin-top:24px">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need merchant services experience?</button><div class="faq-a"><p>Not required. If you have a strong sales background — insurance, solar, roofing, auto, B2B — we can teach you the product. The closing skills you already have are exactly what this model needs. Most of our top reps came from other industries.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How does the $15,000 Fast Start Bonus work?</button><div class="faq-a"><p>Hit your ramp targets in the first 90 days and the Fast Start Bonus pays on top of your normal commissions and residuals. Specific milestones are covered during your onboarding call.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are the pre-set appointments actually qualified?</button><div class="faq-a"><p>Yes. Our appointment setting team pre-qualifies every merchant before putting them on your calendar. You're walking into a conversation with a business owner who is already open to talking — not a cold prospect who doesn't know why you're calling.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How does the 45x buyout work?</button><div class="faq-a"><p>Once your residual portfolio hits a qualifying level, you have the option to sell it at 45x its monthly value. A $10,000/month residual book = a $450,000 buyout. This is a guaranteed program — not a speculation. It's one of the most compelling parts of this model.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is this 1099 or W2?</button><div class="faq-a"><p>This is a 1099 independent contractor opportunity. You run your own business, own your residual portfolio, and control your income ceiling. That independence is exactly what creates the uncapped upside and buyout eligibility.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What's a realistic timeline to meaningful income?</button><div class="faq-a"><p>Upfront commissions and daily pay start with your first deal — typically within your first 1-2 weeks. Residuals build over months 1-12 as your portfolio grows. Most reps hit $1,500–$3,000/month in passive residuals within their first year at a consistent 8-10 deals/month pace.</p></div></div>
+  <div class="sec">
+    <p class="sec-lbl">FAQ</p>
+    <h2 class="sec-h">We've Got You Covered</h2>
+    <div class="faqs" style="margin-top:18px">
+      <div class="faq"><button class="faq-q" onclick="tFaq(this)">Do I need merchant services experience?</button><div class="faq-a"><p>Not required. If you have a strong sales background — insurance, solar, roofing, auto, B2B — we train you on the product. Most of our top reps came from other industries. The closing skills transfer immediately.</p></div></div>
+      <div class="faq"><button class="faq-q" onclick="tFaq(this)">How does the $15,000 Fast Start Bonus work?</button><div class="faq-a"><p>Hit your ramp targets in the first 90 days and the Fast Start Bonus pays on top of your normal commissions and residuals. Specific milestones are covered on your onboarding call.</p></div></div>
+      <div class="faq"><button class="faq-q" onclick="tFaq(this)">Are the pre-set appointments actually qualified?</button><div class="faq-a"><p>Yes. Our appointment setting team pre-qualifies every merchant. You're walking into a conversation with a business owner already open to talking — not a cold prospect.</p></div></div>
+      <div class="faq"><button class="faq-q" onclick="tFaq(this)">How does the 45x buyout work?</button><div class="faq-a"><p>Once your residual portfolio hits a qualifying level, you can sell it at 45x its monthly value. A $10,000/month residual book = a $450,000 buyout. This is a guaranteed program, not speculation.</p></div></div>
+      <div class="faq"><button class="faq-q" onclick="tFaq(this)">Is this 1099 or W2?</button><div class="faq-a"><p>1099 independent contractor. You run your own business, own your residual portfolio, and control your income ceiling. That's what creates the uncapped upside and buyout eligibility.</p></div></div>
+      <div class="faq"><button class="faq-q" onclick="tFaq(this)">What's a realistic income timeline?</button><div class="faq-a"><p>Upfront commissions and daily pay start with your first deal — typically within 1–2 weeks. Residuals build over months 1–12. Most reps hit $1,500–$3,000/month in passive residuals within their first year at 8–10 deals/month.</p></div></div>
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="div"></div>
 
-  <!-- NSM -->
-  <div class="section">
-    <p class="section-label">Who You're Talking To</p>
-    <h2>Meet Your National Sales Manager</h2>
-    <div class="nsm-card" style="margin-top:24px">
-      <img class="nsm-photo" src="coleman.jpg" onerror="this.onerror=null;this.src='https://i.ibb.co/hJfzfj3z/IMG-2050.jpg'" alt="Coleman Clark"/>
-      <div class="nsm-info">
-        <h3>Coleman Clark</h3>
-        <div class="nsm-title">National Sales Manager — Wholesale Payments</div>
-        <div class="nsm-badges">
-          <span class="nsm-badge">19 Years in Merchant Services</span>
-          <span class="nsm-badge">Inc. 5000 NSM</span>
-          <span class="nsm-badge">50,000+ Merchants Served</span>
-        </div>
-        <p class="nsm-quote">"I've spent 19 years in this industry. I know what separates reps who build real wealth from those who stay stuck in the reset cycle. If you're a closer looking for a better vehicle, I want to talk to you personally."</p>
-        <div class="nsm-contact">
-          <a href="tel:2148023388">📞 214.802.3388</a>
-          <a href="mailto:coleman.clark@wholesalepayments.com">✉ coleman.clark@wholesalepayments.com</a>
-        </div>
+  <!-- TEAM -->
+  <div class="sec">
+    <p class="sec-lbl">Who You're Working With</p>
+    <h2 class="sec-h">Meet Team Steel</h2>
+    <p class="sec-sub">Team Steel has 7 National Sales Directors each running their own team within Wholesale Payments. When you join you'll be assigned to a dedicated director who personally guides you from your first deal to a full residual portfolio.</p>
+    <div class="team-grid">
+
+      <div class="tc">
+        <img class="tc-photo" src="coleman.jpg" onerror="this.onerror=null;this.src='https://i.ibb.co/hJfzfj3z/IMG-2050.jpg'" alt="Coleman Clark"/>
+        <div class="tc-name">Coleman Clark</div>
+        <div class="tc-role">National Sales Director</div>
+        <div class="tc-team">Team Aluminum</div>
+        <div class="tc-email">coleman.clark@wholesalepayments.com</div>
+        <div class="tc-detail">10,260+ Accounts · 17 Yrs · Former Marine</div>
+        <a href="https://www.linkedin.com/in/coleman-clark-14a518251/" target="_blank" class="li-btn"><svg width="10" height="10" viewBox="0 0 24 24" class="li-svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
       </div>
+
+      <div class="tc">
+        <img class="tc-photo" src="jerrin.jpg" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Jerrin Ashford"/>
+        <div class="tc-name">Jerrin Ashford</div>
+        <div class="tc-role">National Sales Director</div>
+        <div class="tc-team">Team Lithium</div>
+        <div class="tc-email">jerrin.ashford@wholesalepayments.com</div>
+        <a href="https://www.linkedin.com/in/jerrin-ashford-85613041/" target="_blank" class="li-btn"><svg width="10" height="10" viewBox="0 0 24 24" class="li-svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+      </div>
+
+      <div class="tc">
+        <img class="tc-photo" src="royce.jpg" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Royce Amsden"/>
+        <div class="tc-name">Royce Amsden</div>
+        <div class="tc-role">National Sales Director</div>
+        <div class="tc-team">Team Palladium</div>
+        <div class="tc-email">royce.amsden@wholesalepayments.com</div>
+        <div class="tc-detail">Systems-driven · Scalable outside sales teams</div>
+      </div>
+
+      <div class="tc">
+        <img class="tc-photo" src="harold.jpg" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Harold Law"/>
+        <div class="tc-name">Harold Law</div>
+        <div class="tc-role">National Sales Director</div>
+        <div class="tc-team">Team Aytch</div>
+        <div class="tc-email">harold.law@wholesalepayments.com</div>
+        <div class="tc-detail">20+ Yrs · Street-level culture · Real world training</div>
+        <a href="https://www.linkedin.com/in/harold-law-23659abb/" target="_blank" class="li-btn"><svg width="10" height="10" viewBox="0 0 24 24" class="li-svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+      </div>
+
+      <div class="tc">
+        <img class="tc-photo" src="daniel.jpg" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Daniel Carleton"/>
+        <div class="tc-name">Daniel Carleton</div>
+        <div class="tc-role">National Sales Director</div>
+        <div class="tc-team">Team Brass</div>
+        <div class="tc-email">daniel.carleton@wholesalepayments.com</div>
+        <div class="tc-detail">VP of Sales · Dallas-Fort Worth</div>
+        <a href="https://www.linkedin.com/in/daniel-carleton-33835219/" target="_blank" class="li-btn"><svg width="10" height="10" viewBox="0 0 24 24" class="li-svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+      </div>
+
+      <div class="tc">
+        <img class="tc-photo" src="chance.jpg" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Chance Sanders"/>
+        <div class="tc-name">Chance Sanders</div>
+        <div class="tc-role">National Sales Director</div>
+        <div class="tc-team">Team Iridium</div>
+        <div class="tc-email">chance.sanders@wholesalepayments.com</div>
+        <div class="tc-detail">Simple systems · Daily accountability · McKinney, TX</div>
+        <a href="https://www.linkedin.com/in/chance-sanders-2568523a0/" target="_blank" class="li-btn"><svg width="10" height="10" viewBox="0 0 24 24" class="li-svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+      </div>
+
+      <div class="tc">
+        <img class="tc-photo" src="drew.jpg" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Drew Clanton"/>
+        <div class="tc-name">Drew Clanton</div>
+        <div class="tc-role">National Sales Director</div>
+        <div class="tc-team">Team Steel</div>
+        <div class="tc-email">drew.c@wholesalepayments.com</div>
+        <div class="tc-detail">18 Years in Payments · McKinney, TX</div>
+        <a href="https://www.linkedin.com/in/drew-clanton-5a6074208/" target="_blank" class="li-btn"><svg width="10" height="10" viewBox="0 0 24 24" class="li-svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+      </div>
+
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="div"></div>
 
-  <!-- FORM -->
-  <div class="section" id="a-form">
-    <p class="section-label">Apply Now</p>
-    <h2 style="text-align:center;margin-bottom:32px">Let's Schedule a Call and Join Team Steel at Wholesale Payments</h2>
-    <div class="form-wrap" id="form-a">
+  <!-- NEXT STEPS -->
+  <div class="next-bg">
+    <p class="sec-lbl" style="text-align:center">What Happens Next</p>
+    <h2 class="sec-h" style="text-align:center;max-width:460px;margin:0 auto 6px">3 Simple Steps to Get Started</h2>
+    <div class="next-row">
+      <div class="ns"><div class="ns-circle">1</div><div class="ns-t">Submit Your Info</div><div class="ns-d">60 seconds. Name, phone, and email only.</div></div>
+      <div class="ns"><div class="ns-circle">2</div><div class="ns-t">We Reach Out</div><div class="ns-d">A Team Steel director calls or texts within 24 business hours.</div></div>
+      <div class="ns"><div class="ns-circle">3</div><div class="ns-t">We Walk You Through It</div><div class="ns-d">A no-pressure 20-minute call to see if this is the right fit.</div></div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- FORM A -->
+  <div class="sec" id="a-form">
+    <p class="sec-lbl" style="text-align:center">Apply Now</p>
+    <h2 class="sec-h" style="text-align:center;margin-bottom:24px">Let's Schedule a Call and Join Team Steel</h2>
+    <div class="form-card" id="form-a">
       <h3>See If You're a Fit</h3>
-      <p>Takes 60 seconds. We'll follow up within 24 hours.</p>
-      <div style="display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:20px;font-size:.82rem;color:var(--text3)"><span style="color:var(--green)">●</span> Currently accepting reps in your area — limited spots available</div>
-      <div class="form-row">
-        <div class="form-field"><label>First Name *</label><input type="text" id="a-firstName" placeholder="First"/><div class="form-error" id="err-a-firstName">Required</div></div>
-        <div class="form-field"><label>Last Name *</label><input type="text" id="a-lastName" placeholder="Last"/><div class="form-error" id="err-a-lastName">Required</div></div>
+      <p>Takes 60 seconds. Experienced reps only.</p>
+      <div class="urgency"><span class="u-dot"></span>Currently accepting reps in your area — limited spots available</div>
+      <div class="frow">
+        <div class="field"><label>First Name *</label><input type="text" id="a-fn" placeholder="First"/><div class="ferr" id="ea-fn">Required</div></div>
+        <div class="field"><label>Last Name *</label><input type="text" id="a-ln" placeholder="Last"/><div class="ferr" id="ea-ln">Required</div></div>
       </div>
-      <div class="form-row">
-        <div class="form-field form-full"><label>Phone *</label><input type="tel" id="a-phone" placeholder="(___) ___-____" oninput="fmtPhone(this)" maxlength="14"/><div class="form-error" id="err-a-phone">Required</div></div>
+      <div class="frow">
+        <div class="field ff"><label>Phone *</label><input type="tel" id="a-ph" placeholder="(___) ___-____" oninput="fmtPh(this)" maxlength="14"/><div class="ferr" id="ea-ph">Required</div></div>
       </div>
-      <div class="form-row">
-        <div class="form-field form-full"><label>Email *</label><input type="email" id="a-email" placeholder="you@email.com"/><div class="form-error" id="err-a-email">Required</div></div>
+      <div class="frow">
+        <div class="field ff"><label>Email *</label><input type="email" id="a-em" placeholder="you@email.com"/><div class="ferr" id="ea-em">Required</div></div>
       </div>
-      <button class="submit-btn" onclick="submitInfoOnly('a')">See If You're a Fit →</button>
-      <p style="text-align:center;color:var(--text3);font-size:.82rem;margin-top:12px">Or text Coleman directly: <a href="sms:2148023388" style="color:var(--green);font-weight:600">214.802.3388</a></p>
-      <p class="form-disclaimer">By submitting you agree to be contacted by Coleman Clark at Wholesale Payments. No spam. Ever.</p>
+      <button class="sub-btn" onclick="submit('a')">See If You're a Fit →</button>
+      <p class="txt-cta">Or text Coleman directly: <a href="sms:2148023388">214.802.3388</a></p>
+      <p class="disc">By submitting you agree to be contacted by a Team Steel National Sales Director. No spam. Ever. We respect your privacy — your information is never sold or shared.</p>
     </div>
   </div>
 
-  <div class="final-cta">
+  <div class="fcta">
     <h2>Your Skill Deserves a Better Vehicle</h2>
-    <p>Stop building someone else's income. Let's talk.</p>
-    <button class="btn-main" onclick="scrollToEl('a-form')">See If You're a Fit →</button>
-    <p style="margin-top:20px;color:var(--text3);font-size:.8rem"><a href="tel:2148023388" style="color:var(--text3)">214.802.3388</a> &nbsp;|&nbsp; coleman.clark@wholesalepayments.com &nbsp;|&nbsp; wholesalepayments.com</p>
+    <p>Stop building someone else's income. Let's talk about what you could build here.</p>
+    <button class="btn" onclick="goTo('a-form')">See If You're a Fit →</button>
+    <div class="fcta-contact"><a href="tel:2148023388">214.802.3388</a> · coleman.clark@wholesalepayments.com · wholesalepayments.com</div>
   </div>
 
-</div>
+</div><!-- /page-a -->
 
-<!-- ===== PAGE B ===== -->
+<!-- ════════════════ PAGE B ════════════════ -->
 <div class="page" id="page-b">
 
-  <div class="proof-bar">
-    <div class="proof-item"><span class="proof-dot"></span>#3 Fastest Growing ISO — Fortune 5,000</div>
-    <div class="proof-item"><span class="proof-dot"></span>$7B+ Processed Annually</div>
-    <div class="proof-item"><span class="proof-dot"></span>18 Years in Business</div>
-    <div class="proof-item"><span class="proof-dot"></span>400+ Employees</div>
-    <div class="proof-item"><span class="proof-dot"></span>Google 4.6 ★★★★★</div>
+  <div class="proof">
+    <div class="proof-i"><span class="dot"></span>#3 Fastest Growing ISO — Fortune 5,000</div>
+    <div class="proof-i"><span class="dot"></span>$7B+ Processed Annually</div>
+    <div class="proof-i"><span class="dot"></span>18 Years in Business</div>
+    <div class="proof-i"><span class="dot"></span>400+ Employees</div>
+    <div class="proof-i"><span class="dot"></span>Google 4.6 ★★★★★</div>
   </div>
 
   <div class="hero">
-    <div class="hero-eyebrow">For Ambitious Self-Starters</div>
+    <div class="eyebrow">For Ambitious Self-Starters</div>
     <h1>You're Not Built for Average.<br><em>Build Real Income Starting Day One.</em></h1>
-    <p class="hero-sub">Team Steel is one of the top performing teams inside Wholesale Payments — and we're looking for ambitious self-starters who want a vehicle that pays them even when they're not working. No experience required.</p>
-    <p class="hero-crosslink">Already have sales experience? <a onclick="switchPage('a')">See our offer for experienced reps →</a></p>
-    <div class="hero-bullets">
-      <span class="hero-bullet">No Experience Required</span>
-      <span class="hero-bullet">Daily Pay from Day One</span>
-      <span class="hero-bullet">Residuals That Compound</span>
-      <span class="hero-bullet">45x Portfolio Buyout</span>
+    <p class="hero-sub">Team Steel is one of the top performing groups inside Wholesale Payments — and we're looking for ambitious self-starters who want a vehicle that pays them even when they're not working. No experience required.</p>
+    <p class="xlink">Already have sales experience? <a onclick="switchPage('a')">See our offer for experienced reps →</a></p>
+    <div class="pills">
+      <span class="pill">No Experience Required</span>
+      <span class="pill">Daily Pay from Day One</span>
+      <span class="pill">Residuals That Compound</span>
+      <span class="pill">45x Portfolio Buyout</span>
     </div>
-    <div class="cta-center" style="flex-direction:column;align-items:center;gap:10px">
-      <button class="btn-main" onclick="scrollToEl('b-form')">See If You're a Fit →</button>
-      <p style="font-size:.78rem;color:var(--text3)">Joining 400+ active reps nationwide · Limited spots available in your area</p>
+    <div class="hero-cta">
+      <button class="btn" onclick="goTo('b-form')">See If You're a Fit →</button>
+      <span class="sp">Joining 400+ active reps nationwide · Limited spots available</span>
+    </div>
+    <div class="stats">
+      <div><div class="stat-n">7</div><div class="stat-l">Directors on Team Steel</div></div>
+      <div><div class="stat-n">$7B+</div><div class="stat-l">Annual Volume</div></div>
+      <div><div class="stat-n">45x</div><div class="stat-l">Portfolio Buyout</div></div>
+      <div><div class="stat-n">Daily</div><div class="stat-l">Pay</div></div>
+      <div><a href="https://www.linkedin.com/in/coleman-clark-14a518251/" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--green);font-size:.74rem;font-weight:600"><svg width="18" height="18" viewBox="0 0 24 24" class="li-svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></div>
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="div"></div>
 
-  <div class="section">
-    <p class="section-label">The Offer</p>
-    <h2>What Wholesale Payments Puts on the Table</h2>
-    <p class="section-sub">This isn't your standard sales gig. From day one you can expect:</p>
-    <ul class="offer-list">
-      <li class="featured">
-        <div class="offer-check">✓</div>
-        <div class="offer-content"><strong>2–3 Pre-Set Appointments Daily</strong><span>Qualified merchant appointments set for you — you don't cold call all day, you close.</span></div>
-      </li>
-      <li class="featured">
-        <div class="offer-check">✓</div>
-        <div class="offer-content"><strong>$800–$3,000 Per Deal</strong><span>Upfront commission on every account you bring on, with volume bonuses available.</span></div>
-      </li>
-      <li class="featured">
-        <div class="offer-check">✓</div>
-        <div class="offer-content"><strong>45x Buyout Opportunity</strong><span>$10,000/month residual portfolio = $450,000 buyout. You're building a real asset.</span></div>
-      </li>
-      <li>
-        <div class="offer-check">✓</div>
-        <div class="offer-content"><strong>$15,000 Fast Start Bonus</strong><span>Hit your early targets and earn a significant bonus on top of your commissions.</span></div>
-      </li>
-      <li>
-        <div class="offer-check">✓</div>
-        <div class="offer-content"><strong>Daily Pay</strong><span>Get paid the same day your deals are processed. No waiting on payroll.</span></div>
-      </li>
-      <li>
-        <div class="offer-check">✓</div>
-        <div class="offer-content"><strong>Lifetime Vested Residuals</strong><span>Every merchant you close pays you monthly for life. It stacks and compounds.</span></div>
-      </li>
-      <li>
-        <div class="offer-check">✓</div>
-        <div class="offer-content"><strong>Full Training &amp; Support</strong><span>You're not dropped into the field alone. Scripts, coaching, and industry veterans in your corner.</span></div>
-      </li>
+  <div class="sec">
+    <p class="sec-lbl">The Offer</p>
+    <h2 class="sec-h">What Wholesale Payments Puts on the Table</h2>
+    <p class="sec-sub">This isn't your standard sales gig. From day one you can expect:</p>
+    <ul class="offers">
+      <li class="offer hi"><div class="chk">✓</div><div><strong>2–3 Pre-Set Appointments Daily</strong><span>Qualified merchant appointments set for you — you don't cold call all day, you close.</span></div></li>
+      <li class="offer hi"><div class="chk">✓</div><div><strong>$800–$3,000 Per Deal</strong><span>Upfront commission on every account you bring on, with volume bonuses available.</span></div></li>
+      <li class="offer hi"><div class="chk">✓</div><div><strong>45x Buyout Opportunity</strong><span>$10,000/month residual portfolio = $450,000 buyout. You're building a real asset.</span></div></li>
+      <li class="offer"><div class="chk">✓</div><div><strong>$15,000 Fast Start Bonus</strong><span>Hit your early targets and earn a significant bonus on top of your commissions.</span></div></li>
+      <li class="offer"><div class="chk">✓</div><div><strong>Daily Pay</strong><span>Get paid the same day your deals are processed. No waiting on payroll.</span></div></li>
+      <li class="offer"><div class="chk">✓</div><div><strong>Lifetime Vested Residuals</strong><span>Every merchant you close pays you monthly for life. It stacks and compounds.</span></div></li>
+      <li class="offer"><div class="chk">✓</div><div><strong>Full Training &amp; Support</strong><span>Scripts, coaching, and National Sales Directors with decades of experience in your corner.</span></div></li>
     </ul>
   </div>
 
-  <div class="mid-cta">
-    <p>Think this could be the right move for you?</p>
-    <button class="btn-main" onclick="scrollToEl('b-form')">See If You're a Fit →</button>
-  </div>
+  <div class="mcta"><p>Think this could be the right move for you?</p><button class="btn" onclick="goTo('b-form')">See If You're a Fit →</button></div>
+  <div class="div"></div>
 
-  <div class="divider"></div>
-
-  <div class="section">
-    <p class="section-label">What Reps Are Saying</p>
-    <h2>Don't Just Take Our Word For It</h2>
-    <p class="section-sub">Here's what people who made the jump have to say:</p>
-    <div style="max-width:380px;margin:0 auto 36px;border-radius:var(--radius2);overflow:hidden;border:1px solid var(--border)">
-      <iframe src="https://www.youtube.com/embed/MCQOjYoR41k" title="Rep Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;display:block"></iframe>
-    </div>
-    <div class="testi-grid">
-      <div class="testi">
-        <p class="testi-text">"I was in retail management making $42k with a ceiling I could see from day one. My residuals now cover my mortgage every month."</p>
-        <div class="testi-author">S.L. — Nashville, TN &nbsp;·&nbsp; Former Retail Manager</div>
+  <div class="sec">
+    <p class="sec-lbl">What Reps Are Saying</p>
+    <h2 class="sec-h">Don't Just Take Our Word For It</h2>
+    <p class="sec-sub">Real feedback from people who made the jump:</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:720px;margin:0 auto 28px">
+      <div class="vid-wrap" style="margin:0">
+        <iframe src="https://www.youtube.com/embed/MCQOjYoR41k" title="Rep Testimonial 1" allowfullscreen></iframe>
       </div>
-      <div class="testi">
-        <p class="testi-text">"Zero sales background. What I had was the ability to follow a process and not quit. Month 14 my residuals hit $3,800/month."</p>
-        <div class="testi-author">A.P. — Charlotte, NC &nbsp;·&nbsp; No Sales Background</div>
+      <div class="vid-wrap" style="margin:0">
+        <iframe src="https://www.youtube.com/embed/J75v_-PRsWw" title="Rep Testimonial 2" allowfullscreen></iframe>
       </div>
-      <div class="testi">
-        <p class="testi-text">"The residuals are real and the buyout is real. When I found out my portfolio was worth 45x, everything changed about how I approached this."</p>
-        <div class="testi-author">C.M. — Denver, CO &nbsp;·&nbsp; Entrepreneur Background</div>
+      <div class="vid-wrap" style="margin:0">
+        <iframe src="https://www.youtube.com/embed/SbQZu_dncGE" title="Rep Testimonial 3" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="div"></div>
 
-  <div class="section">
-    <p class="section-label">The Numbers</p>
-    <h2>See What You Could Build</h2>
-    <p class="section-sub">Put in a realistic pace and see exactly what consistent effort builds over time.</p>
-
-    <div class="buyout-box" style="margin-bottom:40px">
-      <div style="font-size:.85rem;color:var(--text2);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">45x Buyout Calculator</div>
-      <div class="buyout-num">$450,000</div>
-      <div class="buyout-label">Value of a $10,000/month residual portfolio at 45x</div>
-      <div class="buyout-calc-row">
+  <div class="sec" id="b-calc">
+    <p class="sec-lbl">The Numbers</p>
+    <h2 class="sec-h">See What You Could Build</h2>
+    <p class="sec-sub">Put in a realistic pace and see exactly what consistent effort builds over time.</p>
+    <div class="buyout">
+      <div style="font-size:.74rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:5px">45x Buyout Calculator</div>
+      <div class="buyout-n" id="bb-disp">$450,000</div>
+      <div class="buyout-s">Value of a $10,000/month residual portfolio at 45x</div>
+      <div class="buyout-row">
         <span>$</span>
-        <input type="number" id="buyout-input-b" value="10000" oninput="updateBuyoutB()" placeholder="Monthly residual"/>
-        <span>/mo × 45 =</span>
-        <span class="buyout-result" id="buyout-result-b">$450,000</span>
+        <input type="number" id="bb-in" value="10000" oninput="cBuyout('b')"/>
+        <span>× 45 =</span>
+        <span class="buyout-res" id="bb-res">$450,000</span>
       </div>
     </div>
-
-    <div class="calc-wrap">
-      <div class="calc-title">Residual Income Builder</div>
-      <div class="calc-sub">Adjust the inputs — results update live. Based on ~1% of each merchant's monthly card volume.</div>
-      <div class="calc-grid">
-        <div class="calc-field"><label>Deals Per Month</label><input type="number" id="cb-deals" value="8" min="1" max="100"/></div>
-        <div class="calc-field"><label>Avg Card Volume / Account ($)</label><input type="number" id="cb-vol" value="25000" min="1000"/></div>
-        <div class="calc-field"><label>Residual % of Volume</label><input type="number" id="cb-pct" value="1" min="0.1" max="3" step="0.1"/></div>
-        <div class="calc-field"><label>Upfront Per Deal ($)</label><input type="number" id="cb-upfront" value="800" min="0"/></div>
-        <div class="calc-field"><label>Number of Months</label><input type="number" id="cb-months" value="12" min="1" max="60"/></div>
+    <div class="calc">
+      <div class="calc-h">Residual Income Builder</div>
+      <div class="calc-s">Adjust inputs — results update live. Based on ~1% of each merchant's monthly card volume.</div>
+      <div class="calc-fields">
+        <div class="cf"><label>Deals Per Month</label><input type="number" id="cb-deals" value="8" min="1" max="100"/></div>
+        <div class="cf"><label>Avg Card Volume / Account ($)</label><input type="number" id="cb-vol" value="25000" min="1000"/></div>
+        <div class="cf"><label>Residual % of Volume</label><input type="number" id="cb-pct" value="1" min="0.1" max="3" step="0.1"/></div>
+        <div class="cf"><label>Number of Months</label><input type="number" id="cb-months" value="12" min="1" max="60"/></div>
       </div>
-      <div class="calc-results">
-        <div class="result-card"><div class="rc-label">Total Accounts</div><div class="rc-val" id="cb-r1">—</div></div>
-        <div class="result-card"><div class="rc-label">Month-End Residual</div><div class="rc-val" id="cb-r2">—</div></div>
-        <div class="result-card"><div class="rc-label">Total Residual (Year)</div><div class="rc-val big" id="cb-r3">—</div></div>
-        <div class="result-card"><div class="rc-label">Total Upfront</div><div class="rc-val" id="cb-r4">—</div></div>
-        <div class="result-card"><div class="rc-label">Combined Income</div><div class="rc-val" id="cb-r5">—</div></div>
+      <div class="calc-res">
+        <div class="rc"><div class="rc-l">Total Accounts</div><div class="rc-v" id="cb-r1">—</div></div>
+        <div class="rc"><div class="rc-l">Month-End Residual</div><div class="rc-v" id="cb-r2">—</div></div>
+        <div class="rc"><div class="rc-l">Total Residual (Year)</div><div class="rc-v big" id="cb-r3">—</div></div>
+        <div class="rc"><div class="rc-l">Portfolio Buyout Value</div><div class="rc-v" id="cb-r4">—</div></div>
+        <div class="rc"><div class="rc-l">Cumulative Residual</div><div class="rc-v" id="cb-r5">—</div></div>
       </div>
-      <div class="calc-motivation" id="cb-motivation">Enter your numbers above to see your income projection.</div>
-      <div class="chart-wrap"><canvas id="cb-chart"></canvas></div>
+      <div class="calc-msg" id="cb-msg">Enter your numbers above to see your income projection.</div>
+      <div class="chart-box"><canvas id="cb-chart"></canvas></div>
     </div>
   </div>
 
-  <div class="mid-cta">
-    <p>Still have questions? Let's schedule a call.</p>
-    <button class="btn-main" onclick="scrollToEl('b-form')">See If You're a Fit →</button>
-  </div>
+  <div class="mcta"><p>Ready to make these numbers real?</p><button class="btn" onclick="goTo('b-form')">See If You're a Fit →</button></div>
+  <div class="div"></div>
 
-  <div class="divider"></div>
-
-  <div class="section">
-    <p class="section-label">FAQ</p>
-    <h2>We've Got You Covered</h2>
-    <div style="max-width:680px;margin-top:24px">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need sales experience to start?</button><div class="faq-a"><p>Not required. Some of our most successful reps had no formal sales background. You need drive, consistency, and willingness to learn. We provide training, scripts, and pre-set appointments so you're never starting cold.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What does daily pay mean exactly?</button><div class="faq-a"><p>When your deal is processed and approved, you get paid that same day. There's no waiting on bi-weekly payroll cycles. Your commissions hit as deals close — which is a big motivator early on.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I do this part time?</button><div class="faq-a"><p>Yes. Many reps start part-time while keeping their current job. As residuals build up over months, most transition to full-time. You control the pace — but results scale with effort.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the 45x buyout?</button><div class="faq-a"><p>Once your residual portfolio hits a qualifying level you can sell it at 45x its monthly value. A $10,000/month book = $450,000. It's a guaranteed program that turns your recurring income into a lump sum exit if and when you choose.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long until I see real income?</button><div class="faq-a"><p>Upfront commissions and daily pay start with your first deal — usually within your first 1-2 weeks. Residuals build over 6-18 months. We're transparent: this takes consistent effort over 12 months to build something meaningful. It's not a fast payout scheme.</p></div></div>
+  <div class="sec">
+    <p class="sec-lbl">FAQ</p>
+    <h2 class="sec-h">We've Got You Covered</h2>
+    <div class="faqs" style="margin-top:18px">
+      <div class="faq"><button class="faq-q" onclick="tFaq(this)">Do I need sales experience to start?</button><div class="faq-a"><p>Not required. Some of our most successful reps had no formal sales background. You need drive, consistency, and willingness to learn. We provide training, scripts, and pre-set appointments so you're never starting cold.</p></div></div>
+      <div class="faq"><button class="faq-q" onclick="tFaq(this)">What does daily pay mean exactly?</button><div class="faq-a"><p>When your deal is processed and approved you get paid that same day. No waiting on bi-weekly payroll cycles. Your commissions hit as deals close.</p></div></div>
+      <div class="faq"><button class="faq-q" onclick="tFaq(this)">Can I do this part time?</button><div class="faq-a"><p>Yes. Many reps start part-time while keeping their current job. As residuals build over months most transition to full-time. You control the pace — but results scale with effort.</p></div></div>
+      <div class="faq"><button class="faq-q" onclick="tFaq(this)">What is the 45x buyout?</button><div class="faq-a"><p>Once your residual portfolio hits a qualifying level you can sell it at 45x its monthly value. A $10,000/month book = $450,000. It's a guaranteed program that turns recurring income into a lump sum exit if and when you choose.</p></div></div>
+      <div class="faq"><button class="faq-q" onclick="tFaq(this)">How long until I see real income?</button><div class="faq-a"><p>Upfront commissions and daily pay start with your first deal — usually within 1–2 weeks. Residuals build over 6–18 months. This takes consistent effort over 12 months to build something meaningful.</p></div></div>
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="div"></div>
 
-  <div class="section">
-    <p class="section-label">Who You're Working With</p>
-    <h2>Meet Team Steel</h2>
-    <p class="section-sub">When you join Team Steel at Wholesale Payments you get a dedicated National Sales Manager in your corner from day one — a real person who's been in the field and knows how to build income in this business.</p>
+  <div class="sec">
+    <p class="sec-lbl">Who You're Working With</p>
+    <h2 class="sec-h">Meet Team Steel</h2>
+    <p class="sec-sub">When you join Team Steel you'll be assigned to a dedicated National Sales Director who personally guides you from your first deal to a full residual portfolio.</p>
     <div class="team-grid">
-      <div class="team-card">
-        <img class="team-photo" src="coleman.jpg" onerror="this.onerror=null;this.src='https://i.ibb.co/hJfzfj3z/IMG-2050.jpg'" alt="Coleman Clark"/>
-        <div class="team-name">Coleman Clark</div>
-        <div class="team-title">National Sales Manager</div>
-        <div class="team-email">coleman.clark@wholesalepayments.com</div>
-      </div>
-      <div class="team-card">
-        <img class="team-photo" src="" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Jerrin Ashford"/>
-        <div class="team-name">Jerrin Ashford</div>
-        <div class="team-title">National Sales Manager</div>
-        <div class="team-email">jerrin.ashford@wholesalepayments.com</div>
-      </div>
-      <div class="team-card">
-        <img class="team-photo" src="" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Royce Amsden"/>
-        <div class="team-name">Royce Amsden</div>
-        <div class="team-title">National Sales Manager</div>
-        <div class="team-email">royce.amsden@wholesalepayments.com</div>
-      </div>
-      <div class="team-card">
-        <img class="team-photo" src="" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Harold Law"/>
-        <div class="team-name">Harold Law</div>
-        <div class="team-title">National Sales Manager</div>
-        <div class="team-email">harold.law@wholesalepayments.com</div>
-      </div>
-      <div class="team-card">
-        <img class="team-photo" src="" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Daniel Carleton"/>
-        <div class="team-name">Daniel Carleton</div>
-        <div class="team-title">National Sales Manager</div>
-        <div class="team-email">daniel.carleton@wholesalepayments.com</div>
-      </div>
-      <div class="team-card">
-        <img class="team-photo" src="" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Chance Sanders"/>
-        <div class="team-name">Chance Sanders</div>
-        <div class="team-title">National Sales Manager</div>
-        <div class="team-email">chance.sanders@wholesalepayments.com</div>
-      </div>
+      <div class="tc"><img class="tc-photo" src="coleman.jpg" onerror="this.onerror=null;this.src='https://i.ibb.co/hJfzfj3z/IMG-2050.jpg'" alt="Coleman Clark"/><div class="tc-name">Coleman Clark</div><div class="tc-role">National Sales Director</div><div class="tc-team">Team Aluminum</div><div class="tc-email">coleman.clark@wholesalepayments.com</div><div class="tc-detail">10,260+ Accounts · 17 Yrs · Former Marine</div><a href="https://www.linkedin.com/in/coleman-clark-14a518251/" target="_blank" class="li-btn"><svg width="10" height="10" viewBox="0 0 24 24" class="li-svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
+      <div class="tc"><img class="tc-photo" src="jerrin.jpg" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Jerrin Ashford"/><div class="tc-name">Jerrin Ashford</div><div class="tc-role">National Sales Director</div><div class="tc-team">Team Lithium</div><div class="tc-email">jerrin.ashford@wholesalepayments.com</div><a href="https://www.linkedin.com/in/jerrin-ashford-85613041/" target="_blank" class="li-btn"><svg width="10" height="10" viewBox="0 0 24 24" class="li-svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
+      <div class="tc"><img class="tc-photo" src="royce.jpg" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Royce Amsden"/><div class="tc-name">Royce Amsden</div><div class="tc-role">National Sales Director</div><div class="tc-team">Team Palladium</div><div class="tc-email">royce.amsden@wholesalepayments.com</div><div class="tc-detail">Systems-driven · Scalable outside sales teams</div></div>
+      <div class="tc"><img class="tc-photo" src="harold.jpg" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Harold Law"/><div class="tc-name">Harold Law</div><div class="tc-role">National Sales Director</div><div class="tc-team">Team Aytch</div><div class="tc-email">harold.law@wholesalepayments.com</div><div class="tc-detail">20+ Yrs · Street-level culture · Real world training</div><a href="https://www.linkedin.com/in/harold-law-23659abb/" target="_blank" class="li-btn"><svg width="10" height="10" viewBox="0 0 24 24" class="li-svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
+      <div class="tc"><img class="tc-photo" src="daniel.jpg" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Daniel Carleton"/><div class="tc-name">Daniel Carleton</div><div class="tc-role">National Sales Director</div><div class="tc-team">Team Brass</div><div class="tc-email">daniel.carleton@wholesalepayments.com</div><div class="tc-detail">VP of Sales · Dallas-Fort Worth</div><a href="https://www.linkedin.com/in/daniel-carleton-33835219/" target="_blank" class="li-btn"><svg width="10" height="10" viewBox="0 0 24 24" class="li-svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
+      <div class="tc"><img class="tc-photo" src="chance.jpg" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Chance Sanders"/><div class="tc-name">Chance Sanders</div><div class="tc-role">National Sales Director</div><div class="tc-team">Team Iridium</div><div class="tc-email">chance.sanders@wholesalepayments.com</div><div class="tc-detail">Simple systems · Daily accountability · McKinney, TX</div><a href="https://www.linkedin.com/in/chance-sanders-2568523a0/" target="_blank" class="li-btn"><svg width="10" height="10" viewBox="0 0 24 24" class="li-svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
+      <div class="tc"><img class="tc-photo" src="drew.jpg" onerror="this.onerror=null;this.style.background='var(--bg4)'" alt="Drew Clanton"/><div class="tc-name">Drew Clanton</div><div class="tc-role">National Sales Director</div><div class="tc-team">Team Steel</div><div class="tc-email">drew.c@wholesalepayments.com</div><div class="tc-detail">18 Years in Payments · McKinney, TX</div><a href="https://www.linkedin.com/in/drew-clanton-5a6074208/" target="_blank" class="li-btn"><svg width="10" height="10" viewBox="0 0 24 24" class="li-svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></div>
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="div"></div>
 
-  <div class="section" id="b-form">
-    <p class="section-label">Apply Now</p>
-    <h2 style="text-align:center;margin-bottom:32px">Let's Schedule a Call and Join Team Steel at Wholesale Payments</h2>
-    <div class="form-wrap" id="form-b">
+  <div class="next-bg">
+    <p class="sec-lbl" style="text-align:center">What Happens Next</p>
+    <h2 class="sec-h" style="text-align:center;max-width:460px;margin:0 auto 6px">3 Simple Steps to Get Started</h2>
+    <div class="next-row">
+      <div class="ns"><div class="ns-circle">1</div><div class="ns-t">Submit Your Info</div><div class="ns-d">60 seconds. Name, phone, and email only.</div></div>
+      <div class="ns"><div class="ns-circle">2</div><div class="ns-t">We Reach Out</div><div class="ns-d">A Team Steel director calls or texts within 24 business hours.</div></div>
+      <div class="ns"><div class="ns-circle">3</div><div class="ns-t">We Walk You Through It</div><div class="ns-d">A no-pressure 20-minute call to see if this is the right fit.</div></div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- FORM B -->
+  <div class="sec" id="b-form">
+    <p class="sec-lbl" style="text-align:center">Apply Now</p>
+    <h2 class="sec-h" style="text-align:center;margin-bottom:24px">Let's Schedule a Call and Join Team Steel</h2>
+    <div class="form-card" id="form-b">
       <h3>See If You're a Fit</h3>
       <p>Takes 60 seconds. We'll follow up within 24 hours.</p>
-      <div style="display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:20px;font-size:.82rem;color:var(--text3)"><span style="color:var(--green)">●</span> Currently accepting reps in your area — limited spots available</div>
-      <div class="form-row">
-        <div class="form-field"><label>First Name *</label><input type="text" id="b-firstName" placeholder="First"/><div class="form-error" id="err-b-firstName">Required</div></div>
-        <div class="form-field"><label>Last Name *</label><input type="text" id="b-lastName" placeholder="Last"/><div class="form-error" id="err-b-lastName">Required</div></div>
+      <div class="urgency"><span class="u-dot"></span>Currently accepting reps in your area — limited spots available</div>
+      <div class="frow">
+        <div class="field"><label>First Name *</label><input type="text" id="b-fn" placeholder="First"/><div class="ferr" id="eb-fn">Required</div></div>
+        <div class="field"><label>Last Name *</label><input type="text" id="b-ln" placeholder="Last"/><div class="ferr" id="eb-ln">Required</div></div>
       </div>
-      <div class="form-row">
-        <div class="form-field form-full"><label>Phone *</label><input type="tel" id="b-phone" placeholder="(___) ___-____" oninput="fmtPhone(this)" maxlength="14"/><div class="form-error" id="err-b-phone">Required</div></div>
+      <div class="frow">
+        <div class="field ff"><label>Phone *</label><input type="tel" id="b-ph" placeholder="(___) ___-____" oninput="fmtPh(this)" maxlength="14"/><div class="ferr" id="eb-ph">Required</div></div>
       </div>
-      <div class="form-row">
-        <div class="form-field form-full"><label>Email *</label><input type="email" id="b-email" placeholder="you@email.com"/><div class="form-error" id="err-b-email">Required</div></div>
+      <div class="frow">
+        <div class="field ff"><label>Email *</label><input type="email" id="b-em" placeholder="you@email.com"/><div class="ferr" id="eb-em">Required</div></div>
       </div>
-      <button class="submit-btn" onclick="submitInfoOnly('b')">See If You're a Fit →</button>
-      <p style="text-align:center;color:var(--text3);font-size:.82rem;margin-top:12px">Or text Coleman directly: <a href="sms:2148023388" style="color:var(--green);font-weight:600">214.802.3388</a></p>
-      <p class="form-disclaimer">By submitting you agree to be contacted by Coleman Clark at Wholesale Payments. No spam. Ever.</p>
+      <button class="sub-btn" onclick="submit('b')">See If You're a Fit →</button>
+      <p class="txt-cta">Or text Coleman directly: <a href="sms:2148023388">214.802.3388</a></p>
+      <p class="disc">By submitting you agree to be contacted by a Team Steel National Sales Director. No spam. Ever. We respect your privacy — your information is never sold or shared.</p>
     </div>
   </div>
 
-  <div class="final-cta">
+  <div class="fcta">
     <h2>The Only Question Is: Are You Ready?</h2>
     <p>Stop waiting for the right time. This is it.</p>
-    <button class="btn-main" onclick="scrollToEl('b-form')">See If You're a Fit →</button>
-    <p style="margin-top:20px;color:var(--text3);font-size:.8rem"><a href="tel:2148023388" style="color:var(--text3)">214.802.3388</a> &nbsp;|&nbsp; coleman.clark@wholesalepayments.com &nbsp;|&nbsp; wholesalepayments.com</p>
+    <button class="btn" onclick="goTo('b-form')">See If You're a Fit →</button>
+    <div class="fcta-contact"><a href="tel:2148023388">214.802.3388</a> · coleman.clark@wholesalepayments.com · wholesalepayments.com</div>
   </div>
 
-</div>
+</div><!-- /page-b -->
 
-<!-- STICKY BAR -->
-<div class="sticky-bar">
-  <div class="sticky-text">
-    <strong id="sticky-headline">Team Steel · Wholesale Payments</strong>
+<!-- ══ STICKY ══ -->
+<div class="sticky">
+  <div class="sticky-info">
+    <strong id="s-head">Team Steel · Wholesale Payments</strong>
     <p>Daily Pay · 45x Buyout · Lifetime Residuals</p>
   </div>
   <div class="sticky-btns">
-    <button class="btn-outline" onclick="scrollToEl(currentPage==='a'?'a-calc':'b-calc')">Run Numbers</button>
-    <button class="btn-main" onclick="scrollToEl(currentPage==='a'?'a-form':'b-form')">See If You're a Fit</button>
+    <button class="btn-o" onclick="goTo(cp==='a'?'a-calc':'b-calc')">Run Numbers</button>
+    <button class="btn" onclick="goTo(cp==='a'?'a-form':'b-form')">See If You're a Fit</button>
   </div>
 </div>
 
 <footer>
-  <p>© 2025 Team Steel — A Top Performing Team within Wholesale Payments, An Inc. 5000 Payment Technology Company</p>
-  <p style="margin-top:6px"><a href="tel:2148023388" style="color:var(--text3)">214.802.3388</a> &nbsp;|&nbsp; coleman.clark@wholesalepayments.com &nbsp;|&nbsp; wholesalepayments.com</p>
+  <p>© 2025 Team Steel · Wholesale Payments — An Inc. 5000 Payment Technology Company</p>
+  <p><a href="tel:2148023388">214.802.3388</a> · coleman.clark@wholesalepayments.com · <a href="https://wholesalepayments.com" target="_blank">wholesalepayments.com</a></p>
+  <p><a href="https://www.linkedin.com/in/coleman-clark-14a518251/" target="_blank">Connect with Coleman on LinkedIn →</a></p>
+  <p style="margin-top:6px;font-size:.66rem">We respect your privacy. Your information is never sold or shared with third parties.</p>
 </footer>
 
 <script>
-var SHEET_URL='https://script.google.com/macros/s/AKfycbxOK-aMeD2v60nxEGnt_LB090yB9SFXD4GaA_3rxeCjhfysb_2x3Ww3d9oH-WuWK4pcwg/exec';
-var currentPage='a';
-var chartA=null,chartB=null;
+/* ── CONFIG ── */
+var SHEET='https://script.google.com/macros/s/AKfycbxOK-aMeD2v60nxEGnt_LB090yB9SFXD4GaA_3rxeCjhfysb_2x3Ww3d9oH-WuWK4pcwg/exec';
+var cp='a';
+var cA=null,cB=null;
 
+/* ── PAGE SWITCH ── */
 function switchPage(p){
-  currentPage=p;
-  document.getElementById('page-a').classList.toggle('active',p==='a');
-  document.getElementById('page-b').classList.toggle('active',p==='b');
-  document.querySelectorAll('.tab-btn').forEach(function(b,i){
-    b.classList.toggle('active',(i===0&&p==='a')||(i===1&&p==='b'));
+  cp=p;
+  document.getElementById('page-a').classList.toggle('on',p==='a');
+  document.getElementById('page-b').classList.toggle('on',p==='b');
+  document.querySelectorAll('.tab').forEach(function(t,i){
+    t.classList.toggle('on',(i===0&&p==='a')||(i===1&&p==='b'));
   });
   window.scrollTo({top:0,behavior:'smooth'});
-  document.getElementById('sticky-headline').textContent=p==='a'?'Team Steel — Build Real Income':'Team Steel — Start Your Journey';
+  document.getElementById('s-head').textContent='Team Steel · Wholesale Payments';
 }
 
-function scrollToEl(id){
+/* ── SCROLL ── */
+function goTo(id){
   var el=document.getElementById(id);
   if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
-function toggleFaq(btn){btn.parentElement.classList.toggle('open');}
+/* ── FAQ ── */
+function tFaq(btn){btn.parentElement.classList.toggle('open');}
+
+/* ── FORMAT ── */
 function fmt(n){return '$'+Math.round(n).toLocaleString();}
-
-function updateBuyout(){
-  var v=parseFloat(document.getElementById('buyout-input').value)||0;
-  document.getElementById('buyout-result').textContent=fmt(v*45);
-}
-function updateBuyoutB(){
-  var v=parseFloat(document.getElementById('buyout-input-b').value)||0;
-  document.getElementById('buyout-result-b').textContent=fmt(v*45);
-}
-
-function fmtPhone(el){
-  var d=el.value.replace(/\D/g,'').substring(0,10);
-  var o='';
+function fmtPh(el){
+  var d=el.value.replace(/\D/g,'').substring(0,10),o='';
   if(d.length>0) o='('+d.substring(0,3);
   if(d.length>=4) o+=') '+d.substring(3,6);
   if(d.length>=7) o+='-'+d.substring(6,10);
   el.value=o;
 }
 
-function validateForm(p){
-  var fields=['firstName','lastName','phone','email','industry','experience'];
-  var valid=true;
-  fields.forEach(function(f){
+/* ── BUYOUT CALC ── */
+function cBuyout(p){
+  var v=parseFloat(document.getElementById('b'+p+'-in').value)||0;
+  document.getElementById('b'+p+'-res').textContent=fmt(v*45);
+}
+
+/* ── VALIDATE ── */
+function validate(p){
+  var ok=true;
+  ['fn','ln','ph','em'].forEach(function(f){
     var el=document.getElementById(p+'-'+f);
-    var err=document.getElementById('err-'+p+'-'+f);
-    if(!el||!err) return;
-    if(!el.value||el.value.trim()===''){
-      err.style.display='block';valid=false;
-    } else {
-      err.style.display='none';
-    }
+    var er=document.getElementById('e'+p+'-'+f);
+    var empty=!el||!el.value.trim();
+    if(er) er.style.display=empty?'block':'none';
+    if(empty) ok=false;
   });
-  return valid;
+  return ok;
 }
 
-function closeCalModal(e){
-  if(e.target===document.getElementById('cal-overlay')){
-    document.getElementById('cal-overlay').style.display='none';
-  }
+/* ── MODAL ── */
+function closeModal(e){
+  if(e.target===document.getElementById('modal'))
+    document.getElementById('modal').style.display='none';
+}
+function showModal(){
+  var m=document.getElementById('modal');
+  m.style.cssText='display:block;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.82);z-index:9999;overflow-y:auto;';
+  document.querySelector('.modal-box').style.cssText='background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:28px 24px;max-width:460px;width:90%;text-align:center;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);';
 }
 
-function showCalModal(){
-  var el=document.getElementById('cal-overlay');
-  el.style.cssText='display:block;position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;background:rgba(0,0,0,0.8);overflow-y:auto;';
-  var modal=el.querySelector('.cal-modal');
-  modal.style.cssText='background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:36px 32px;max-width:500px;width:90%;text-align:center;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);';
-}
-
-function submitInfoOnly(page){
-  if(!validateForm(page)) return;
-  var p=page;
-  var fields={
-    page:      page==='a'?'Page A - Experienced Closer':'Page B - Entrepreneur Builder',
-    firstName: document.getElementById(p+'-firstName').value,
-    lastName:  document.getElementById(p+'-lastName').value,
-    phone:     document.getElementById(p+'-phone').value,
-    email:     document.getElementById(p+'-email').value,
-    industry:  document.getElementById(p+'-industry').value,
-    experience:document.getElementById(p+'-experience').value
+/* ── SUBMIT ── */
+function submit(pg){
+  if(!validate(pg)) return;
+  var d={
+    page:pg==='a'?'Experienced Closer':'New to Sales',
+    firstName:document.getElementById(pg+'-fn').value,
+    lastName:document.getElementById(pg+'-ln').value,
+    phone:document.getElementById(pg+'-ph').value,
+    email:document.getElementById(pg+'-em').value,
+    industry:'',experience:''
   };
-  var params=Object.keys(fields).map(function(k){
-    return encodeURIComponent(k)+'='+encodeURIComponent(fields[k]);
-  }).join('&');
   var img=new Image();
-  img.src=SHEET_URL+'?'+params;
-  var form=document.getElementById('form-'+p);
-  form.innerHTML='<div style="text-align:center;padding:20px 0"><p style="color:var(--text2);font-size:.9rem">Your information has been submitted. Coleman will be in touch within 24 hours.</p></div>';
-  setTimeout(function(){showCalModal();},300);
+  img.src=SHEET+'?'+Object.keys(d).map(function(k){return encodeURIComponent(k)+'='+encodeURIComponent(d[k]);}).join('&');
+  var fc=document.getElementById('form-'+pg);
+  fc.innerHTML='<div style="text-align:center;padding:14px 0"><p style="color:var(--text2);font-size:.86rem">Your information has been submitted. A Team Steel director will be in touch within 24 business hours.</p></div>';
+  setTimeout(showModal,300);
 }
 
-function calcResidual(deals,vol,pct,upfront,months){
-  var rpa=vol*(pct/100);
-  var monthlyData=[];
-  var cum=0,running=0;
-  for(var m=1;m<=months;m++){
-    running+=deals;
-    var mr=running*rpa;
-    cum+=mr;
-    monthlyData.push({month:m,residual:Math.round(mr),cumulative:Math.round(cum)});
-  }
-  return{
-    totalAccounts:deals*months,
-    monthlyResidualEnd:Math.round(deals*months*rpa),
-    totalResidual:Math.round(cum),
-    totalUpfront:Math.round(deals*months*upfront),
-    combined:Math.round(cum+(deals*months*upfront)),
-    monthlyData:monthlyData
-  };
-}
-
-function updateCalc(prefix){
-  var deals=parseFloat(document.getElementById(prefix+'-deals').value)||0;
-  var vol=parseFloat(document.getElementById(prefix+'-vol').value)||0;
-  var pct=parseFloat(document.getElementById(prefix+'-pct').value)||0;
-  var upfront=parseFloat(document.getElementById(prefix+'-upfront').value)||0;
-  var months=parseInt(document.getElementById(prefix+'-months').value)||1;
+/* ── RESIDUAL CALC ── */
+function runCalc(px){
+  var deals=parseFloat(document.getElementById(px+'-deals').value)||0;
+  var vol=parseFloat(document.getElementById(px+'-vol').value)||0;
+  var pct=parseFloat(document.getElementById(px+'-pct').value)||0;
+  var months=parseInt(document.getElementById(px+'-months').value)||1;
   if(!deals||!vol||!pct) return;
-  var r=calcResidual(deals,vol,pct,upfront,months);
-  document.getElementById(prefix+'-r1').textContent=r.totalAccounts.toLocaleString();
-  document.getElementById(prefix+'-r2').textContent=fmt(r.monthlyResidualEnd);
-  document.getElementById(prefix+'-r3').textContent=fmt(r.totalResidual);
-  document.getElementById(prefix+'-r4').textContent=fmt(r.totalUpfront);
-  document.getElementById(prefix+'-r5').textContent=fmt(r.combined);
-  document.getElementById(prefix+'-motivation').textContent='At this pace, you could build '+fmt(r.monthlyResidualEnd)+'/month in residual income in '+months+' months — '+fmt(r.combined)+' in total projected earnings with a potential '+fmt(r.monthlyResidualEnd*45)+' portfolio buyout value.';
-  drawChart(prefix,r.monthlyData);
+  var rpa=vol*(pct/100),cum=0,run=0,data=[];
+  for(var m=1;m<=months;m++){
+    run+=deals;
+    var mr=run*rpa;
+    cum+=mr;
+    data.push({m:m,r:Math.round(mr),c:Math.round(cum)});
+  }
+  var tot=deals*months,end=Math.round(tot*rpa);
+  document.getElementById(px+'-r1').textContent=tot.toLocaleString();
+  document.getElementById(px+'-r2').textContent=fmt(end);
+  document.getElementById(px+'-r3').textContent=fmt(Math.round(cum));
+  document.getElementById(px+'-r4').textContent=fmt(end*45);
+  document.getElementById(px+'-r5').textContent=fmt(Math.round(cum));
+  document.getElementById(px+'-msg').textContent='At this pace you could build '+fmt(end)+'/month in residual income in '+months+' months — with a potential portfolio buyout value of '+fmt(end*45)+'.';
+  var cvs=document.getElementById(px+'-chart');
+  var cfg={type:'bar',data:{labels:data.map(function(d){return 'Mo '+d.m;}),datasets:[{label:'Monthly Residual',data:data.map(function(d){return d.r;}),backgroundColor:'rgba(74,199,138,.58)',borderRadius:3,order:2},{label:'Cumulative',data:data.map(function(d){return d.c;}),type:'line',borderColor:'#4AC78A',backgroundColor:'transparent',borderWidth:2,pointRadius:0,tension:.4,order:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#b0adb8',font:{size:10}}},tooltip:{callbacks:{label:function(c){return c.dataset.label+': $'+Math.round(c.raw).toLocaleString();}}}},scales:{x:{ticks:{color:'#6a6880',font:{size:9}},grid:{color:'rgba(255,255,255,.03)'}},y:{ticks:{color:'#6a6880',font:{size:9},callback:function(v){return '$'+Math.round(v/1000)+'k';}},grid:{color:'rgba(255,255,255,.03)'}}}}};
+  if(px==='ca'){if(cA)cA.destroy();cA=new Chart(cvs,cfg);}
+  else{if(cB)cB.destroy();cB=new Chart(cvs,cfg);}
 }
 
-function drawChart(prefix,data){
-  var canvas=document.getElementById(prefix+'-chart');
-  var cfg={type:'bar',data:{labels:data.map(function(d){return 'Mo '+d.month;}),datasets:[{label:'Monthly Residual',data:data.map(function(d){return d.residual;}),backgroundColor:'rgba(74,199,138,0.6)',borderRadius:4,order:2},{label:'Cumulative',data:data.map(function(d){return d.cumulative;}),type:'line',borderColor:'#4AC78A',backgroundColor:'transparent',borderWidth:2,pointRadius:0,tension:.4,order:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#b0adb8',font:{size:11}}},tooltip:{callbacks:{label:function(c){return c.dataset.label+': $'+Math.round(c.raw).toLocaleString();}}}},scales:{x:{ticks:{color:'#6a6880',font:{size:10}},grid:{color:'rgba(255,255,255,0.04)'}},y:{ticks:{color:'#6a6880',font:{size:10},callback:function(v){return '$'+Math.round(v/1000)+'k';}},grid:{color:'rgba(255,255,255,0.04)'}}}}};
-  if(prefix==='ca'){if(chartA)chartA.destroy();chartA=new Chart(canvas,cfg);}
-  else{if(chartB)chartB.destroy();chartB=new Chart(canvas,cfg);}
-}
-
-function bindCalc(prefix){
-  ['deals','vol','pct','upfront','months'].forEach(function(f){
-    var el=document.getElementById(prefix+'-'+f);
-    if(el) el.addEventListener('input',function(){updateCalc(prefix);});
+function bindCalc(px){
+  ['deals','vol','pct','months'].forEach(function(f){
+    var el=document.getElementById(px+'-'+f);
+    if(el) el.addEventListener('input',function(){runCalc(px);});
   });
-  updateCalc(prefix);
+  runCalc(px);
 }
 
 window.addEventListener('load',function(){
